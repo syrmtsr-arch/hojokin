@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>石川県・北陸スタートアップ支援制度ガイド 2026年度版</title>
+<style>
+  :root {
+    --navy:   #1A3A5C;
+    --navyDk: #0F2338;
+    --teal:   #0D7C8C;
+    --tealLt: #12A5BA;
+    --gold:   #F5A623;
+    --white:  #FFFFFF;
+    --offWht: #F4F7FA;
+    --gray:   #64748B;
+    --grayLt: #E2EBF4;
+    --red:    #DC2626;
+    --green:  #16A34A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "Meiryo", "Yu Gothic", "Noto Sans JP", sans-serif;
+    background: #E8EDF2;
+    color: var(--navy);
+  }
+
+  /* ── Nav ── */
+  .toc-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navyDk);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 16px;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-bottom: 3px solid var(--gold);
+  }
+  .toc-nav a {
+    color: #AABCCE;
+    text-decoration: none;
+    font-size: 11px;
+    padding: 10px 8px;
+    transition: color .2s;
+  }
+  .toc-nav a:hover { color: var(--gold); }
+
+  /* ── Slide wrapper ── */
+  .slide {
+    max-width: 960px;
+    margin: 32px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 32px rgba(0,0,0,.18);
+  }
+
+  /* ── Header bar ── */
+  .slide-header {
+    background: var(--navy);
+    padding: 14px 28px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .slide-header h2 { color: var(--white); font-size: 20px; }
+  .slide-header .sub { color: var(--tealLt); font-size: 12px; }
+
+  /* ── Slide body ── */
+  .slide-body { background: var(--offWht); padding: 24px 28px; }
+
+  /* ======================================================
+     Slide 1: Title
+  ====================================================== */
+  #s1 { background: var(--navyDk); }
+  #s1 .title-inner {
+    padding: 48px 48px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #s1 .title-left { flex: 1; }
+  .gold-bar {
+    display: inline-block;
+    width: 6px;
+    height: 90px;
+    background: var(--gold);
+    vertical-align: middle;
+    margin-right: 18px;
+    border-radius: 3px;
+  }
+  .title-text-wrap { display: inline-block; vertical-align: middle; }
+  #s1 h1 { color: var(--white); font-size: 34px; line-height: 1.35; }
+  #s1 .year { color: var(--gold); font-size: 16px; margin-top: 8px; }
+  #s1 .caption { color: #AABCCE; font-size: 11px; margin-top: 6px; }
+  .badge {
+    width: 130px; height: 130px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-left: 32px;
+  }
+  .badge .big-num { font-size: 40px; font-weight: bold; color: var(--navyDk); line-height: 1; }
+  .badge .badge-label { font-size: 10px; color: var(--navyDk); }
+  #s1 .date-line { color: #6A8BAA; font-size: 9px; padding: 0 48px 16px; }
+
+  /* ======================================================
+     Slide 2: TOC
+  ====================================================== */
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .toc-card {
+    background: var(--white);
+    border-radius: 6px;
+    padding: 14px 16px 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    border-left: 6px solid;
+  }
+  .toc-num { font-size: 26px; font-weight: bold; min-width: 38px; }
+  .toc-title { font-size: 14px; font-weight: bold; color: var(--navy); }
+
+  /* ======================================================
+     Slide 3: Urgent
+  ====================================================== */
+  #s3 { background: #FEF2F2; }
+  #s3 .slide-header { background: var(--red); }
+  .urgent-note { color: var(--red); font-size: 12px; margin-bottom: 14px; }
+  .urgent-list { display: flex; flex-direction: column; gap: 8px; }
+  .urgent-row {
+    background: var(--white);
+    border-left: 6px solid var(--red);
+    border-radius: 4px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+    flex-wrap: wrap;
+  }
+  .urgent-name { flex: 1; min-width: 200px; font-weight: bold; font-size: 12px; color: var(--navy); }
+  .badge-amt {
+    background: var(--red); color: var(--white);
+    font-size: 11px; font-weight: bold;
+    padding: 4px 10px; border-radius: 3px;
+    white-space: nowrap;
+  }
+  .badge-rate {
+    background: var(--teal); color: var(--white);
+    font-size: 10px; font-weight: bold;
+    padding: 4px 9px; border-radius: 3px;
+    white-space: nowrap;
+  }
+  .urgent-note-text { font-size: 10px; color: var(--gray); min-width: 160px; }
+
+  /* ======================================================
+     Slide 4: Scale list
+  ====================================================== */
+  .scale-table { width: 100%; border-collapse: collapse; }
+  .scale-table tbody tr:nth-child(odd) td { background: var(--white); }
+  .scale-table tbody tr:nth-child(even) td { background: var(--offWht); }
+  .scale-table td { padding: 9px 10px; font-size: 11px; vertical-align: middle; }
+  .scale-table thead th { background: var(--navy); color: var(--white); padding: 8px 10px; font-size: 11px; text-align: left; }
+  .tier-badge {
+    display: inline-block;
+    color: var(--white); font-weight: bold; font-size: 11px;
+    padding: 3px 10px; border-radius: 3px;
+    white-space: nowrap;
+  }
+  .body-tag {
+    display: inline-block;
+    background: var(--grayLt); color: var(--navy);
+    font-size: 9px; padding: 2px 7px; border-radius: 3px;
+  }
+  .scale-note { font-size: 9px; color: var(--gray); }
+  .footnote { font-size: 9px; color: var(--red); text-align: right; margin-top: 6px; }
+
+  /* ======================================================
+     Slide 5: Stage
+  ====================================================== */
+  .stage-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .stage-card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.08); }
+  .stage-header { padding: 12px 14px; color: var(--white); font-weight: bold; font-size: 14px; text-align: center; }
+  .stage-items { padding: 14px; }
+  .stage-item { display: flex; gap: 6px; margin-bottom: 10px; font-size: 10px; line-height: 1.4; }
+  .stage-item .arrow { color: inherit; font-weight: bold; flex-shrink: 0; }
+
+  /* ======================================================
+     Slide 6: Consultation
+  ====================================================== */
+  .consult-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .consult-section h3 { font-size: 15px; font-weight: bold; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .consult-row {
+    padding: 9px 12px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .consult-row:nth-child(odd) { background: #F0FFF4; }
+  .consult-row:nth-child(even) { background: var(--white); }
+  .consult-name { font-size: 11px; font-weight: bold; color: var(--navy); }
+  .consult-detail { font-size: 9px; color: var(--gray); margin-top: 2px; }
+  .facility-row:nth-child(odd) { background: #F0FBFF; }
+  .facility-row:nth-child(even) { background: var(--white); }
+
+  /* ======================================================
+     Slide 7: Municipalities
+  ====================================================== */
+  .muni-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .muni-card {
+    display: flex;
+    background: var(--white);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 5px rgba(0,0,0,.07);
+  }
+  .muni-label {
+    width: 80px;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    flex-shrink: 0;
+    padding: 8px 4px;
+  }
+  .muni-items { padding: 8px 10px; font-size: 9px; color: var(--navy); line-height: 1.7; }
+  .muni-item::before { content: "▸ "; font-weight: bold; }
+  .muni-footer { font-size: 8px; color: var(--gray); margin-top: 8px; }
+
+  /* ======================================================
+     Slide 8: Calendar
+  ====================================================== */
+  /* ── Gantt chart ── */
+  .gantt-wrap { overflow-x: auto; padding-bottom: 6px; }
+  .gantt {
+    min-width: 860px;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  .gantt thead th {
+    background: var(--navy);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    padding: 7px 2px;
+    border-right: 1px solid #2A5080;
+  }
+  .gantt thead th.now-col { background: var(--red); }
+  .gantt thead th.label-col { text-align: left; padding-left: 10px; width: 200px; background: var(--navyDk); }
+  .gantt tbody tr:nth-child(odd)  td { background: var(--white); }
+  .gantt tbody tr:nth-child(even) td { background: var(--offWht); }
+  .gantt tbody tr:hover td { background: #EBF2FA; }
+  .gantt td {
+    border-right: 1px solid var(--grayLt);
+    border-bottom: 1px solid var(--grayLt);
+    padding: 0;
+    height: 34px;
+    vertical-align: middle;
+  }
+  .gantt td.label-cell {
+    padding: 0 8px 0 10px;
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--navy);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-right: 2px solid var(--grayLt);
+  }
+  .gantt td.label-cell .cat {
+    display: inline-block;
+    font-size: 8px;
+    font-weight: normal;
+    color: var(--white);
+    padding: 1px 5px;
+    border-radius: 2px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  /* bar cell */
+  .gantt td.bar { padding: 5px 3px; }
+  .gantt-bar {
+    height: 22px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+    font-size: 8.5px;
+    font-weight: bold;
+    color: var(--white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .gantt-bar.done {
+    background: #94A3B8 !important;
+    color: #E2E8F0;
+    text-decoration: line-through;
+    opacity: .85;
+  }
+  .gantt td.done-row { opacity: .7; }
+  /* bar spans multiple cells → colspan, remove right border */
+  .gantt td.bar-start { padding-right: 0; border-right: none; }
+  .gantt td.bar-mid   { padding: 5px 0; border-right: none; }
+  .gantt td.bar-end   { padding-left: 0; }
+  /* deadline diamond */
+  .gantt td.deadline-cell { text-align: center; font-size: 13px; }
+
+  /* section row */
+  .gantt tr.section-row td {
+    background: var(--grayLt) !important;
+    color: var(--gray);
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: .05em;
+    padding: 3px 10px;
+    border-bottom: 1px solid #C8D8E8;
+  }
+
+  .cal-legend { display: flex; gap: 16px; margin-top: 12px; flex-wrap: wrap; }
+  .cal-legend-item { display: flex; align-items: center; gap: 5px; font-size: 10px; color: var(--gray); }
+  .cal-legend-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+  /* ======================================================
+     Slide 9: National grants
+  ====================================================== */
+  .national-grid-top { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .national-grid-bot { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .nat-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    border-left: 5px solid;
+  }
+  .nat-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 6px; }
+  .nat-name { font-size: 13px; font-weight: bold; color: var(--navy); flex: 1; line-height: 1.35; }
+  .status-badge {
+    font-size: 9px; font-weight: bold; color: var(--white);
+    padding: 3px 8px; border-radius: 3px;
+    white-space: nowrap; align-self: flex-start;
+  }
+  .nat-deadline { font-size: 10px; font-weight: bold; margin-bottom: 8px; }
+  .nat-item { font-size: 9.5px; color: var(--navy); margin-bottom: 5px; line-height: 1.4; }
+  .nat-item::before { content: "▸ "; font-weight: bold; color: var(--teal); }
+  .nat-footnote { font-size: 8px; color: var(--gray); margin-top: 10px; line-height: 1.5; }
+
+  /* ======================================================
+     Slide 10: Summary
+  ====================================================== */
+  #s10 { background: var(--navyDk); }
+  #s10 .slide-header { background: rgba(255,255,255,.08); border-bottom: 2px solid var(--gold); }
+  #s10 .slide-header h2 { color: var(--gold); }
+  #s10 .slide-body { background: var(--navyDk); }
+  .summary-cards { display: flex; flex-direction: column; gap: 12px; }
+  .summary-card {
+    background: #1F4060;
+    border: 1px solid #3A6080;
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .summary-emoji { font-size: 28px; flex-shrink: 0; line-height: 1; }
+  .summary-title { color: var(--gold); font-size: 14px; font-weight: bold; margin-bottom: 4px; }
+  .summary-body { color: #C8DFF0; font-size: 11px; line-height: 1.5; }
+  #s10 .footer-line { color: #4A7090; font-size: 9px; text-align: center; padding: 12px 0 20px; }
+
+  /* ── Utility ── */
+  @media (max-width: 700px) {
+    .toc-grid, .stage-grid, .cal-grid, .national-grid-top, .national-grid-bot,
+    .muni-grid, .consult-grid { grid-template-columns: 1fr; }
+    #s1 .title-inner { flex-direction: column; }
+    .badge { margin: 16px auto 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="toc-nav">
+  <a href="#s1">① タイトル</a>
+  <a href="#s2">② 目次</a>
+  <a href="#s3">③ 6/12締切</a>
+  <a href="#s4">④ 規模別一覧</a>
+  <a href="#s5">⑤ ステージ別</a>
+  <a href="#s6">⑥ 相談窓口</a>
+  <a href="#s7">⑦ 市町村別</a>
+  <a href="#s8">⑧ カレンダー</a>
+  <a href="#s9">⑨ 国の補助金</a>
+  <a href="#s10">⑩ まとめ</a>
+</nav>
+
+<!-- ============================================================
+     Slide 1: Title
+============================================================ -->
+<div class="slide" id="s1">
+  <div class="title-inner">
+    <div class="title-left">
+      <span class="gold-bar"></span>
+      <span class="title-text-wrap">
+        <h1>石川県・北陸<br>スタートアップ支援制度ガイド</h1>
+        <p class="year">2026年度版</p>
+        <p class="caption">TENJO KANAZAWA 創業支援メンバー向け資料</p>
+      </span>
+    </div>
+    <div class="badge">
+      <span class="big-num">60+</span>
+      <span class="badge-label">件の制度を収録</span>
+    </div>
+  </div>
+  <p class="date-line">更新：2026年6月5日</p>
+</div>
+
+<!-- ============================================================
+     Slide 2: Table of Contents
+============================================================ -->
+<div class="slide" id="s2">
+  <div class="slide-header"><h2>本日の目次</h2></div>
+  <div class="slide-body">
+    <div class="toc-grid">
+      <div class="toc-card" style="border-color:var(--red)">
+        <span class="toc-num" style="color:var(--red)">01</span>
+        <span class="toc-title">⚠️ 今すぐ申請！6月12日締切の制度</span>
+      </div>
+      <div class="toc-card" style="border-color:var(--teal)">
+        <span class="toc-num" style="color:var(--teal)">02</span>
+        <span class="toc-title">補助金・助成金 規模別一覧</span>
+      </div>
+      <div class="toc-card" style="border-color:var(--navy)">
+        <span class="toc-num" style="color:var(--navy)">03</span>
+        <span class="toc-title">創業ステージ別おすすめ制度</span>
+      </div>
+      <div class="toc-card" style="border-color:var(--green)">
+        <span class="toc-num" style="color:var(--green)">04</span>
+        <span class="toc-title">無料で使える相談窓口・施設</span>
+      </div>
+      <div class="toc-card" style="border-color:var(--teal)">
+        <span class="toc-num" style="color:var(--teal)">05</span>
+        <span class="toc-title">市町村別 主要補助金マップ</span>
+      </div>
+      <div class="toc-card" style="border-color:var(--gold)">
+        <span class="toc-num" style="color:var(--gold)">06</span>
+        <span class="toc-title">年間カレンダー</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     Slide 3: Urgent (6/12)
+============================================================ -->
+<div class="slide" id="s3">
+  <div class="slide-header" style="background:var(--red)">
+    <h2>⚠️ 今すぐ申請！6月12日（金）16時 締切</h2>
+  </div>
+  <div class="slide-body" style="background:#FEF2F2">
+    <p class="urgent-note">以下の制度はすべて2026年6月12日が締切です。お急ぎください。</p>
+    <div class="urgent-list">
+      <div class="urgent-row">
+        <span class="urgent-name">成長戦略ファンド DX/GX研究開発</span>
+        <span class="badge-amt">最大3,000万円</span>
+        <span class="badge-rate">補助率2/3</span>
+        <span class="urgent-note-text">2者以上連携体・県内企業が代表</span>
+      </div>
+      <div class="urgent-row">
+        <span class="urgent-name">のとスタ補助金</span>
+        <span class="badge-amt">最大3,000万円</span>
+        <span class="badge-rate">補助率3/4</span>
+        <span class="urgent-note-text">能登での実証事業（3年で計9,000万円）</span>
+      </div>
+      <div class="urgent-row">
+        <span class="urgent-name">スタートアップ創出 アクセラレーション枠</span>
+        <span class="badge-amt">最大500万円</span>
+        <span class="badge-rate">補助率3/4</span>
+        <span class="urgent-note-text">起業後10年以内・県内登記</span>
+      </div>
+      <div class="urgent-row">
+        <span class="urgent-name">成長戦略ファンド 国プロFS</span>
+        <span class="badge-amt">最大500万円</span>
+        <span class="badge-rate">全額補助</span>
+        <span class="urgent-note-text">国の競争的資金獲得を目指す企業</span>
+      </div>
+      <div class="urgent-row">
+        <span class="urgent-name">新商品・新サービス開発支援助成金</span>
+        <span class="badge-amt">最大300万円</span>
+        <span class="badge-rate">補助率2/3</span>
+        <span class="urgent-note-text">地域資源活用・社会課題解決</span>
+      </div>
+      <div class="urgent-row">
+        <span class="urgent-name">成長戦略ファンド FS（事業化可能性調査）</span>
+        <span class="badge-amt">最大200万円</span>
+        <span class="badge-rate">全額補助</span>
+        <span class="urgent-note-text">単独企業も可・事業化可能性調査</span>
+      </div>
+      <div class="urgent-row">
+        <span class="urgent-name">スタートアップ創出支援 F/S枠</span>
+        <span class="badge-amt">最大100万円</span>
+        <span class="badge-rate">全額補助</span>
+        <span class="urgent-note-text">起業5年以内または起業予定者</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     Slide 4: Scale list
+============================================================ -->
+<div class="slide" id="s4">
+  <div class="slide-header">
+    <h2>補助金・助成金 規模別一覧</h2>
+    <span class="sub">金額の大きい順</span>
+  </div>
+  <div class="slide-body">
+    <table class="scale-table">
+      <thead>
+        <tr><th>補助額</th><th>制度名</th><th>主体</th><th>備考</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="tier-badge" style="background:#7C3AED">3億円</span></td>
+          <td style="font-weight:bold">Go-Tech事業（大型研究開発枠）</td>
+          <td><span class="body-tag">中小機構</span></td>
+          <td class="scale-note">大学連携・3年間支援。次回は2027年2月頃公募</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge" style="background:var(--red)">3,000万円</span></td>
+          <td style="font-weight:bold">成長戦略ファンド DX/GX研究開発</td>
+          <td><span class="body-tag">ISICO</span></td>
+          <td class="scale-note" style="color:var(--red)">★6/12締切　2者以上の連携体</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge" style="background:var(--red)">3,000万円</span></td>
+          <td style="font-weight:bold">のとスタ補助金（年1,000万×3年）</td>
+          <td><span class="body-tag">石川県</span></td>
+          <td class="scale-note" style="color:var(--red)">★6/12締切　能登での実証事業</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge" style="background:#7C3AED">1億円/年</span></td>
+          <td style="font-weight:bold">Go-Tech事業（通常枠）</td>
+          <td><span class="body-tag">中小機構</span></td>
+          <td class="scale-note">大学連携・3年合計9,750万。次回2027年2月頃</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge" style="background:var(--red)">500万円</span></td>
+          <td style="font-weight:bold">スタートアップ創出 アクセラ枠</td>
+          <td><span class="body-tag">ISICO</span></td>
+          <td class="scale-note" style="color:var(--red)">★6/12締切　起業後10年以内</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge" style="background:var(--red)">500万円</span></td>
+          <td style="font-weight:bold">国プロFS</td>
+          <td><span class="body-tag">ISICO</span></td>
+          <td class="scale-note" style="color:var(--red)">★6/12締切　全額補助</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge" style="background:var(--teal)">500万円</span></td>
+          <td style="font-weight:bold">羽咋市創業等応援補助金</td>
+          <td><span class="body-tag">羽咋市</span></td>
+          <td class="scale-note">若者・転入・まちなか立地で加算</td>
+        </tr>
+        <tr>
+          <td><span class="tier-badge" style="background:var(--red)">300万円</span></td>
+          <td style="font-weight:bold">新商品・新サービス開発支援助成金</td>
+          <td><span class="body-tag">ISICO</span></td>
+          <td class="scale-note" style="color:var(--red)">★6/12締切　地域資源活用・社会課題解決</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="footnote">★ = 6月12日締切</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     Slide 5: Stage
+============================================================ -->
+<div class="slide" id="s5">
+  <div class="slide-header">
+    <h2>創業ステージ別おすすめ制度</h2>
+    <span class="sub">あなたの状況に合った制度を選ぼう</span>
+  </div>
+  <div class="slide-body">
+    <div class="stage-grid">
+      <div class="stage-card">
+        <div class="stage-header" style="background:var(--teal)">💡 創業前</div>
+        <div class="stage-items" style="color:var(--teal)">
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">スタートアップ創出支援 F/S枠（最大100万・全額補助）</span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">ISICO 創業サポートデスク（無料相談）</span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">金沢市 起業・経営サポートカウンター（無料）</span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">いしかわ創業なび（総合ポータル）</span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">各市町村 創業塾（無料〜5,000円）</span></div>
+        </div>
+      </div>
+      <div class="stage-card">
+        <div class="stage-header" style="background:var(--navy)">🚀 創業直後（5年以内）</div>
+        <div class="stage-items" style="color:var(--navy)">
+          <div class="stage-item"><span class="arrow">▸</span><span>新商品・新サービス開発支援助成金（最大300万）</span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span>スタートアップ創出支援 アクセラ枠（最大500万）</span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span>地域連携若者起業家支援（最大200万・40歳未満）</span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span>ISICO 専門家派遣事業（年3回・無料）</span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span>起業支援金 移住支援（最大200万・移住者のみ）</span></div>
+        </div>
+      </div>
+      <div class="stage-card">
+        <div class="stage-header" style="background:#7C3AED">📈 成長期（10年以内）</div>
+        <div class="stage-items" style="color:#7C3AED">
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">成長戦略ファンド DX/GX研究開発（最大3,000万）</span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">いしかわアクセラレータープログラム（伴走支援）</span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">Go-Tech事業（最大3億・大学連携必須）</span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">海外販路開拓支援（最大100万）</span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">TeSH GAPファンド（大学・高専発スタートアップ向け）</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     Slide 6: Consultation & Facilities
+============================================================ -->
+<div class="slide" id="s6">
+  <div class="slide-header">
+    <h2>無料で使える相談窓口・施設</h2>
+    <span class="sub">まずはここから！費用ゼロで使える支援</span>
+  </div>
+  <div class="slide-body">
+    <div class="consult-grid">
+      <div class="consult-section">
+        <h3 style="color:var(--green)">📞 相談窓口</h3>
+        <div class="consult-row">
+          <div class="consult-name">ISICO 創業サポートデスク</div>
+          <div class="consult-detail">076-267-1244　創業全般・段階問わず</div>
+        </div>
+        <div class="consult-row">
+          <div class="consult-name">ISICO 専門家派遣事業</div>
+          <div class="consult-detail">076-267-1244　年3回無料・診断士等派遣</div>
+        </div>
+        <div class="consult-row">
+          <div class="consult-name">石川県よろず支援拠点</div>
+          <div class="consult-detail">076-267-6711　何度でも無料・経営全般</div>
+        </div>
+        <div class="consult-row">
+          <div class="consult-name">金沢市 起業・経営サポートカウンター</div>
+          <div class="consult-detail">076-220-2204　月・金曜、中小企業診断士対応</div>
+        </div>
+        <div class="consult-row">
+          <div class="consult-name">金沢市 起業実践アドバイザー</div>
+          <div class="consult-detail">076-220-2204　年4回・起業5年以内</div>
+        </div>
+        <div class="consult-row">
+          <div class="consult-name">ITビジネスプラザ武蔵 DX相談</div>
+          <div class="consult-detail">076-224-6340　IT・デザイン・経営</div>
+        </div>
+      </div>
+      <div class="consult-section">
+        <h3 style="color:var(--teal)">🏢 施設・ラボ</h3>
+        <div class="consult-row facility-row">
+          <div class="consult-name">いしかわクリエイトラボ</div>
+          <div class="consult-detail">月12,000円〜（5㎡）　能美市・5㎡のみ空きあり</div>
+        </div>
+        <div class="consult-row facility-row">
+          <div class="consult-name">金沢未来のまち創造館</div>
+          <div class="consult-detail">076-280-3115　最長5年</div>
+        </div>
+        <div class="consult-row facility-row">
+          <div class="consult-name">ITビジネスプラザ武蔵</div>
+          <div class="consult-detail">076-224-6340　最長3年</div>
+        </div>
+        <div class="consult-row facility-row">
+          <div class="consult-name">七尾 創業支援館しるべ蔵</div>
+          <div class="consult-detail">月1万円＋光熱費　0767-53-8565・3年以内</div>
+        </div>
+        <div class="consult-row facility-row">
+          <div class="consult-name">内灘 産業支援センターUMI＋</div>
+          <div class="consult-detail">要問合せ　レンタルオフィス6室</div>
+        </div>
+        <div class="consult-row facility-row">
+          <div class="consult-name">加賀市イノベーションセンター</div>
+          <div class="consult-detail">基本無料（共益費実費）　0761-72-7833・テック向け</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     Slide 7: Municipalities
+============================================================ -->
+<div class="slide" id="s7">
+  <div class="slide-header">
+    <h2>市町村別 主要補助金マップ</h2>
+    <span class="sub">お住まいの自治体の制度をチェック！</span>
+  </div>
+  <div class="slide-body">
+    <div class="muni-grid">
+      <div class="muni-card">
+        <div class="muni-label" style="background:var(--navy)">金沢市</div>
+        <div class="muni-items">
+          <div class="muni-item">地域連携若者起業家支援：最大200万円（40歳未満）</div>
+          <div class="muni-item">金沢AIビレッジ形成促進：最大700万円（ICT・クリエイター）</div>
+          <div class="muni-item">金澤町家再生活用：最大550万円</div>
+          <div class="muni-item">工芸品国際販路開拓：最大100万円</div>
+        </div>
+      </div>
+      <div class="muni-card">
+        <div class="muni-label" style="background:var(--teal)">小松市</div>
+        <div class="muni-items">
+          <div class="muni-item">経営モデルチェンジ支援：最大200万円</div>
+          <div class="muni-item">空き店舗活用型創業支援：最大100万円</div>
+          <div class="muni-item">よーいやはっすん：月次ピッチ無料</div>
+        </div>
+      </div>
+      <div class="muni-card">
+        <div class="muni-label" style="background:#7C3AED">加賀市</div>
+        <div class="muni-items">
+          <div class="muni-item">新規出店コンペティション：最大500万円</div>
+          <div class="muni-item">新規出店支援：最大200万円（空き家活用）</div>
+          <div class="muni-item">イノベーションセンター：賃料無料</div>
+        </div>
+      </div>
+      <div class="muni-card">
+        <div class="muni-label" style="background:var(--gold); color:var(--navyDk)">羽咋市</div>
+        <div class="muni-items">
+          <div class="muni-item">創業等応援補助金：最大200万円（若者・転入加算あり）</div>
+        </div>
+      </div>
+      <div class="muni-card">
+        <div class="muni-label" style="background:var(--green)">かほく市</div>
+        <div class="muni-items">
+          <div class="muni-item">ビジネスイノベーション補助金：最大360万円（空き家活用）</div>
+        </div>
+      </div>
+      <div class="muni-card">
+        <div class="muni-label" style="background:var(--red)">輪島市</div>
+        <div class="muni-items">
+          <div class="muni-item">起業・新規出店支援：最大300万円</div>
+        </div>
+      </div>
+      <div class="muni-card">
+        <div class="muni-label" style="background:#D97706">珠洲市</div>
+        <div class="muni-items">
+          <div class="muni-item">仕事場創業・拡大支援助成金：最大200万円（2/3補助）</div>
+        </div>
+      </div>
+      <div class="muni-card">
+        <div class="muni-label" style="background:var(--teal)">能登町</div>
+        <div class="muni-items">
+          <div class="muni-item">創業・継承支援事業補助金：最大250万円</div>
+        </div>
+      </div>
+      <div class="muni-card">
+        <div class="muni-label" style="background:var(--navy)">穴水町</div>
+        <div class="muni-items">
+          <div class="muni-item">創業者支援事業：最大300万円（空き家活用）</div>
+        </div>
+      </div>
+      <div class="muni-card">
+        <div class="muni-label" style="background:#059669">白山市</div>
+        <div class="muni-items">
+          <div class="muni-item">起業家支援補助金：最大150万円</div>
+          <div class="muni-item">商店街新規出店：最大150万円（改装費）</div>
+        </div>
+      </div>
+    </div>
+    <p class="muni-footer">※ 全市町村の詳細は「市町村別創業支援制度データベース」を参照</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     Slide 8: Calendar
+============================================================ -->
+<div class="slide" id="s8">
+  <div class="slide-header">
+    <h2>2026年度 申請カレンダー</h2>
+    <span class="sub">案件ごとの申請受付期間（4月 → 3月）</span>
+  </div>
+  <div class="slide-body">
+    <div class="gantt-wrap">
+      <table class="gantt">
+        <colgroup>
+          <col style="width:190px">
+          <!-- 12ヶ月 均等 -->
+          <col><col><col><col><col><col><col><col><col><col><col><col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th class="label-col">制度名</th>
+            <th>4月</th>
+            <th>5月</th>
+            <th class="now-col">6月 ◀</th>
+            <th>7月</th>
+            <th>8月</th>
+            <th>9月</th>
+            <th>10月</th>
+            <th>11月</th>
+            <th>12月</th>
+            <th>1月</th>
+            <th>2月</th>
+            <th>3月</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- ── Section: 締切済み ── -->
+          <tr class="section-row"><td colspan="13">✅ 締切済み（4〜5月）</td></tr>
+
+          <!-- 地域連携若者起業家支援（上期）: Apr(0)-May(1), before=0, colspan=2, after=10 -->
+          <tr>
+            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">金沢市</span>地域連携若者起業家支援（上期）</td>
+            <td class="bar" colspan="2"><div class="gantt-bar done">最大200万円　✅ 5/29締切済</div></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+
+          <!-- いしかわアクセラレーター R7: Apr(0)-Aug(4), before=0, colspan=5, after=7 -->
+          <tr>
+            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">ISICO</span>いしかわアクセラレーター R7</td>
+            <td class="bar" colspan="5"><div class="gantt-bar done">伴走支援プログラム　✅ 8/8締切済（令和7年度）</div></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+
+          <!-- ── Section: 6月12日締切 ── -->
+          <tr class="section-row"><td colspan="13">⚠️ 6月12日締切（ISICO・石川県）</td></tr>
+
+          <!-- s=0(Apr), e=2(Jun), after=9 -->
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:var(--red)">ISICO</span>成長戦略ファンド DX/GX</td>
+            <td class="bar" colspan="3"><div class="gantt-bar" style="background:#DC2626">最大3,000万円 ・ 補助率2/3　◆6/12</div></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:#B91C1C">石川県</span>のとスタ補助金</td>
+            <td class="bar" colspan="3"><div class="gantt-bar" style="background:#B91C1C">最大3,000万円（年1,000万×3年）補助率3/4　◆6/12</div></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:var(--red)">ISICO</span>スタートアップ創出 アクセラ枠</td>
+            <td class="bar" colspan="3"><div class="gantt-bar" style="background:#EF4444">最大500万円 ・ 補助率3/4　◆6/12</div></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:var(--red)">ISICO</span>成長戦略ファンド 国プロFS</td>
+            <td class="bar" colspan="3"><div class="gantt-bar" style="background:#EF4444">最大500万円 ・ 全額補助　◆6/12</div></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:var(--red)">ISICO</span>新商品・新サービス開発助成金</td>
+            <td class="bar" colspan="3"><div class="gantt-bar" style="background:#EF4444">最大300万円 ・ 補助率2/3　◆6/12</div></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:var(--red)">ISICO</span>成長戦略ファンド FS</td>
+            <td class="bar" colspan="3"><div class="gantt-bar" style="background:#EF4444">最大200万円 ・ 全額補助　◆6/12</div></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:var(--red)">ISICO</span>スタートアップ創出 F/S枠</td>
+            <td class="bar" colspan="3"><div class="gantt-bar" style="background:#EF4444">最大100万円 ・ 全額補助　◆6/12</div></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+
+          <!-- ── Section: 6月その他 ── -->
+          <tr class="section-row"><td colspan="13">6月　その他の締切</td></tr>
+
+          <!-- s=2(Jun), e=2(Jun), before=2, after=9 -->
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:#EA580C">随時</span>自動化設備投資準備補助金</td>
+            <td></td><td></td>
+            <td class="bar" colspan="1"><div class="gantt-bar" style="background:#EA580C">◆6/26</div></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+
+          <!-- ── Section: 夏秋期 ── -->
+          <tr class="section-row"><td colspan="13">夏秋期　公募・コンテスト</td></tr>
+
+          <!-- 省力化補助金 s=2(Jun), e=3(Jul), before=2, after=8 -->
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:var(--green)">国</span>省力化投資補助金 第7回</td>
+            <td></td><td></td>
+            <td class="bar" colspan="2"><div class="gantt-bar" style="background:var(--green)">最大1億円 ／ 6/5〜7月下旬</div></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+
+          <!-- 三谷BC s=3(Jul), e=5(Sep), before=3, after=6 -->
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:#D97706">民間</span>三谷ビジネスコンテスト</td>
+            <td></td><td></td><td></td>
+            <td class="bar" colspan="3"><div class="gantt-bar" style="background:#D97706">最優秀賞100万円　例年7〜9月</div></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+
+          <!-- アクセラ R8 s=3(Jul), e=4(Aug), before=3, after=7 -->
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:var(--teal)">ISICO</span>いしかわアクセラレーター R8</td>
+            <td></td><td></td><td></td>
+            <td class="bar" colspan="2"><div class="gantt-bar" style="background:var(--teal)">伴走支援プログラム　例年7〜8月</div></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+
+          <!-- ビジグラ s=4(Aug), e=5(Sep), before=4, after=6 -->
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:#D97706">公庫</span>高校生ビジグラ</td>
+            <td></td><td></td><td></td><td></td>
+            <td class="bar" colspan="2"><div class="gantt-bar" style="background:#D97706">高校生向け　例年8〜9月</div></td>
+            <td></td><td></td><td></td><td></td><td></td><td></td>
+          </tr>
+
+          <!-- テックプランター s=4(Aug), e=6(Oct), before=4, after=5 -->
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:var(--teal)">民間</span>石川テックプランター</td>
+            <td></td><td></td><td></td><td></td>
+            <td class="bar" colspan="3"><div class="gantt-bar" style="background:#0F6674">◆10/2締切（確定）</div></td>
+            <td></td><td></td><td></td><td></td><td></td>
+          </tr>
+
+          <!-- ── Section: 秋期 ── -->
+          <tr class="section-row"><td colspan="13">秋期　公募</td></tr>
+
+          <!-- 地域連携（下期）s=6(Oct), e=6(Oct), before=6, after=5 -->
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:var(--navy)">金沢市</span>地域連携若者起業家支援（下期）</td>
+            <td></td><td></td><td></td><td></td><td></td><td></td>
+            <td class="bar" colspan="1"><div class="gantt-bar" style="background:var(--navy)">最大200万円　10月公募予定</div></td>
+            <td></td><td></td><td></td><td></td><td></td>
+          </tr>
+
+          <!-- ── Section: 通年随時 ── -->
+          <tr class="section-row"><td colspan="13">通年随時受付</td></tr>
+
+          <!-- 随時 s=0, e=11, colspan=12 -->
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:var(--teal)">随時</span>金沢AIビレッジ・各種随時制度</td>
+            <td class="bar" colspan="12"><div class="gantt-bar" style="background:#0D7C8C;opacity:.75">金沢AIビレッジ700万 / 金澤町家550万 / 海外販路100万 ほか　通年受付</div></td>
+          </tr>
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:var(--green)">国</span>デジタル化・AI導入補助金</td>
+            <td class="bar" colspan="12"><div class="gantt-bar" style="background:var(--green);opacity:.75">通常枠 / インボイス枠 / セキュリティ枠 / 複数者連携枠　2026年3月30日〜随時</div></td>
+          </tr>
+
+          <!-- ── Section: 次年度準備 ── -->
+          <tr class="section-row"><td colspan="13">次年度準備（2027年度）</td></tr>
+
+          <!-- Go-Tech s=10(Feb), e=11(Mar), before=10, after=0 -->
+          <tr>
+            <td class="label-cell"><span class="cat" style="background:#7C3AED">中小機構</span>Go-Tech事業</td>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td class="bar" colspan="2"><div class="gantt-bar" style="background:#7C3AED">最大3億円　例年2月公募開始</div></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div><!-- /.gantt-wrap -->
+
+    <div class="cal-legend">
+      <div class="cal-legend-item"><span class="cal-legend-dot" style="background:#DC2626"></span>締切直前・緊急（6月12日）</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot" style="background:#EA580C"></span>6月その他</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot" style="background:var(--green)"></span>国の補助金（公募中）</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot" style="background:#D97706"></span>コンテスト・イベント</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot" style="background:var(--teal)"></span>プログラム・随時</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot" style="background:var(--navy)"></span>市町村制度</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot" style="background:#7C3AED"></span>次年度準備</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     Slide 9: National grants
+============================================================ -->
+<div class="slide" id="s9">
+  <div class="slide-header">
+    <h2>国の補助金（全国対象）</h2>
+    <span class="sub">石川県・市町村の制度と併用可能な場合あり</span>
+  </div>
+  <div class="slide-body">
+    <div class="national-grid-top">
+      <div class="nat-card" style="border-color:var(--green)">
+        <div class="nat-card-head">
+          <div class="nat-name">中小企業省力化投資補助金</div>
+          <span class="status-badge" style="background:var(--green)">公募中</span>
+        </div>
+        <div class="nat-deadline" style="color:var(--green)">第7回：6月5日〜7月下旬</div>
+        <div class="nat-item">一般型：最大 1億円（設備導入・システム構築等）</div>
+        <div class="nat-item">カタログ注文型：最大 1,500万円（汎用製品から選択）</div>
+        <div class="nat-item">対象：人手不足に悩む中小企業等</div>
+        <div class="nat-item">URL：shoryokuka.smrj.go.jp</div>
+      </div>
+      <div class="nat-card" style="border-color:var(--teal)">
+        <div class="nat-card-head">
+          <div class="nat-name">ものづくり・商業・サービス生産性向上促進補助金</div>
+          <span class="status-badge" style="background:var(--gray)">次回公募待ち</span>
+        </div>
+        <div class="nat-deadline" style="color:var(--teal)">23次締切済み・次回未定</div>
+        <div class="nat-item">一般型・グローバル展開型・ビジネスモデル構築型</div>
+        <div class="nat-item">デジタル枠：DX推進に取り組む事業者向け</div>
+        <div class="nat-item">対象：中小企業・小規模事業者</div>
+        <div class="nat-item">問合せ：050-3821-7013</div>
+      </div>
+    </div>
+    <div class="national-grid-bot">
+      <div class="nat-card" style="border-color:var(--teal)">
+        <div class="nat-card-head">
+          <div class="nat-name">デジタル化・AI導入補助金（旧IT導入補助金）</div>
+          <span class="status-badge" style="background:var(--green)">受付中</span>
+        </div>
+        <div class="nat-deadline" style="color:var(--teal)">2026年3月30日〜受付中</div>
+        <div class="nat-item">通常枠 / インボイス枠 / セキュリティ対策推進枠</div>
+        <div class="nat-item">複数者連携デジタル化・AI導入枠</div>
+        <div class="nat-item">対象：中小企業・小規模事業者</div>
+        <div class="nat-item">問合せ：0570-666-376</div>
+      </div>
+      <div class="nat-card" style="border-color:var(--gold)">
+        <div class="nat-card-head">
+          <div class="nat-name">小規模事業者持続化補助金（一般型）</div>
+          <span class="status-badge" style="background:var(--red)">次回未定</span>
+        </div>
+        <div class="nat-deadline" style="color:var(--red)">⚠️ 第16回まで終了・次回公募時期未定</div>
+        <div class="nat-item">販路開拓・業務効率化の取り組みを支援</div>
+        <div class="nat-item">商工会議所・商工会経由で申請</div>
+        <div class="nat-item">対象：小規模事業者（商業・サービス・製造等）</div>
+        <div class="nat-item">問合せ：03-6628-4181</div>
+      </div>
+    </div>
+    <p class="nat-footnote">※ 国の補助金は石川県・市町村の制度と原則併用可能ですが、同一経費への重複補助は不可。必ず各制度の公募要領を確認してください。</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     Slide 10: Summary
+============================================================ -->
+<div class="slide" id="s10">
+  <div class="slide-header">
+    <h2>まとめ</h2>
+  </div>
+  <div class="slide-body">
+    <div class="summary-cards">
+      <div class="summary-card">
+        <span class="summary-emoji">🔴</span>
+        <div>
+          <div class="summary-title">6月12日までに動く</div>
+          <div class="summary-body">ISICO・のとスタ含む7制度が同日締切。最大3,000万円の制度も。</div>
+        </div>
+      </div>
+      <div class="summary-card">
+        <span class="summary-emoji">💬</span>
+        <div>
+          <div class="summary-title">まずは無料相談を活用</div>
+          <div class="summary-body">ISICO・よろず支援拠点・金沢市が無料で対応。費用ゼロで始められる。</div>
+        </div>
+      </div>
+      <div class="summary-card">
+        <span class="summary-emoji">🗺️</span>
+        <div>
+          <div class="summary-title">自治体制度も忘れずに</div>
+          <div class="summary-body">加賀市500万・かほく市360万など市町村独自制度が多数存在する。</div>
+        </div>
+      </div>
+      <div class="summary-card">
+        <span class="summary-emoji">📅</span>
+        <div>
+          <div class="summary-title">年間を見通して計画する</div>
+          <div class="summary-body">Go-Tech（来年2月）・アクセラ（夏）など次年度の準備も今から始める。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="footer-line">TENJO KANAZAWA | 創業支援制度ガイド 2026年度版</p>
+</div>
+
+</body>
+</html>
