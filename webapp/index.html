@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>石川県・北陸スタートアップ補助金ナビ</title>
+<style>
+  :root {
+    --navy: #1B3A5C;
+    --teal: #0F6674;
+    --red: #DC2626;
+    --orange: #EA580C;
+    --amber: #D97706;
+    --green: #16A34A;
+    --gray: #6B7280;
+    --bg: #F7F8FA;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    background: var(--bg);
+    color: #1F2937;
+  }
+  header {
+    background: linear-gradient(135deg, var(--navy), var(--teal));
+    color: #fff;
+    padding: 28px 20px 22px;
+  }
+  header h1 { margin: 0 0 6px; font-size: 1.5rem; }
+  header p { margin: 0; opacity: 0.9; font-size: 0.9rem; }
+  .meta-bar {
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    margin-top: 14px; font-size: 0.82rem;
+  }
+  .meta-pill {
+    background: rgba(255,255,255,0.18);
+    border-radius: 999px;
+    padding: 5px 14px;
+  }
+  #refresh-btn {
+    border: none; cursor: pointer; border-radius: 999px;
+    padding: 6px 16px; font-size: 0.82rem; font-weight: 600;
+    background: #fff; color: var(--navy);
+  }
+  #refresh-btn:hover { opacity: 0.85; }
+  .controls {
+    max-width: 1100px; margin: 18px auto 0; padding: 0 20px;
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  }
+  .controls select, .controls input {
+    padding: 8px 12px; border-radius: 8px; border: 1px solid #D1D5DB;
+    font-size: 0.88rem; background: #fff;
+  }
+  .controls input { flex: 1; min-width: 180px; }
+  main { max-width: 1100px; margin: 0 auto; padding: 16px 20px 60px; }
+  .summary-row {
+    display: flex; gap: 10px; flex-wrap: wrap; margin: 6px 0 18px;
+  }
+  .summary-card {
+    flex: 1; min-width: 130px; background: #fff; border-radius: 10px;
+    padding: 12px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    border-left: 4px solid var(--teal);
+  }
+  .summary-card .num { font-size: 1.4rem; font-weight: 700; color: var(--navy); }
+  .summary-card .label { font-size: 0.78rem; color: var(--gray); }
+  .card {
+    background: #fff; border-radius: 12px; padding: 16px 18px;
+    margin-bottom: 12px; box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    border-left: 5px solid var(--gray);
+  }
+  .card.urgent { border-left-color: var(--red); background: #FEF2F2; }
+  .card.soon { border-left-color: var(--orange); }
+  .card.open { border-left-color: var(--green); }
+  .card.tbd { border-left-color: var(--gray); }
+  .card-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 10px; flex-wrap: wrap;
+  }
+  .card-title { font-weight: 700; font-size: 1.02rem; color: var(--navy); }
+  .card-org { font-size: 0.8rem; color: var(--gray); margin-top: 2px; }
+  .badge {
+    display: inline-block; border-radius: 999px; padding: 4px 12px;
+    font-size: 0.78rem; font-weight: 700; white-space: nowrap;
+  }
+  .badge.urgent { background: var(--red); color: #fff; }
+  .badge.soon { background: var(--orange); color: #fff; }
+  .badge.open { background: var(--green); color: #fff; }
+  .badge.tbd { background: #E5E7EB; color: #4B5563; }
+  .card-body { margin-top: 10px; font-size: 0.86rem; line-height: 1.6; }
+  .card-row { margin: 2px 0; }
+  .card-row .k { color: var(--gray); display: inline-block; min-width: 64px; }
+  .card-note { margin-top: 8px; font-size: 0.82rem; color: #4B5563; background: #F3F4F6; border-radius: 8px; padding: 8px 12px; }
+  .card-link { display: inline-block; margin-top: 10px; font-size: 0.82rem; color: var(--teal); text-decoration: none; font-weight: 600; }
+  .card-link:hover { text-decoration: underline; }
+  .cat-tag {
+    font-size: 0.72rem; background: var(--navy); color: #fff;
+    border-radius: 6px; padding: 2px 8px; margin-right: 6px;
+  }
+  footer { text-align: center; font-size: 0.78rem; color: var(--gray); padding: 20px; }
+  #empty-msg { text-align: center; color: var(--gray); padding: 40px 0; display: none; }
+  #loading-msg { text-align: center; color: var(--gray); padding: 40px 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🚀 石川県・北陸スタートアップ補助金ナビ</h1>
+  <p>TENJO KANAZAWA 創業支援メンバー向け｜常に最新の公募状況を表示します</p>
+  <div class="meta-bar">
+    <span class="meta-pill">最終更新：<strong id="updated-date">読み込み中…</strong></span>
+    <span class="meta-pill" id="days-since"></span>
+    <button id="refresh-btn" title="claude.ai の自動更新ルーティンを開きます">🔄 最新情報に更新する</button>
+  </div>
+</header>
+
+<div class="controls">
+  <select id="filter-status">
+    <option value="all">すべての状況</option>
+    <option value="urgent">🔴 締切間近（7日以内）</option>
+    <option value="open">🟢 公募中</option>
+    <option value="tbd">⚪ 未発表・次回待ち</option>
+  </select>
+  <select id="filter-category">
+    <option value="all">すべてのカテゴリ</option>
+  </select>
+  <input id="search-box" type="text" placeholder="制度名・キーワードで検索（例：DX、移住、創業 など）">
+</div>
+
+<main>
+  <div class="summary-row" id="summary-row"></div>
+  <div id="loading-msg">読み込み中…</div>
+  <div id="card-list"></div>
+  <div id="empty-msg">条件に一致する制度がありません。検索条件を変更してください。</div>
+</main>
+
+<footer>
+  データ出典：<a href="../wiki/sources/subsidy-database-ishikawa-startup-2026.md" style="color:var(--teal)">補助金データベース</a>
+  ／ 自動更新ルーティン「補助金情報 自動更新」が毎月1日に最新化（手動更新も可）
+</footer>
+
+<script>
+const DATA_URL = 'subsidies.json';
+const UPDATE_ROUTINE_URL = 'https://claude.ai/code';
+
+const els = {
+  updatedDate: document.getElementById('updated-date'),
+  daysSince: document.getElementById('days-since'),
+  refreshBtn: document.getElementById('refresh-btn'),
+  filterStatus: document.getElementById('filter-status'),
+  filterCategory: document.getElementById('filter-category'),
+  searchBox: document.getElementById('search-box'),
+  summaryRow: document.getElementById('summary-row'),
+  cardList: document.getElementById('card-list'),
+  emptyMsg: document.getElementById('empty-msg'),
+  loadingMsg: document.getElementById('loading-msg'),
+};
+
+els.refreshBtn.addEventListener('click', () => window.open(UPDATE_ROUTINE_URL, '_blank'));
+
+let allItems = [];
+
+function daysUntil(dateStr) {
+  if (!dateStr) return null;
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const target = new Date(dateStr + 'T00:00:00');
+  return Math.round((target - today) / 86400000);
+}
+
+function statusOf(item) {
+  const d = daysUntil(item.deadline);
+  if (d !== null) {
+    if (d < 0) return 'tbd';      // 締切済み扱い
+    if (d <= 7) return 'urgent';
+    if (d <= 30) return 'soon';
+    return 'open';
+  }
+  // deadlineが無い場合はstatusフィールドで判定
+  if (item.status === '公募中' || item.status === '随時受付') return 'open';
+  return 'tbd';
+}
+
+function statusLabel(item, computed) {
+  const d = daysUntil(item.deadline);
+  if (d !== null) {
+    if (d < 0) return '締切済み';
+    if (d === 0) return '本日締切！';
+    return `締切まであと${d}日`;
+  }
+  return item.status || '—';
+}
+
+function badgeClass(computed) {
+  return { urgent: 'urgent', soon: 'soon', open: 'open', tbd: 'tbd' }[computed] || 'tbd';
+}
+
+function renderSummary(items) {
+  const urgent = items.filter(i => statusOf(i) === 'urgent').length;
+  const open = items.filter(i => statusOf(i) === 'open' || statusOf(i) === 'soon').length;
+  const tbd = items.filter(i => statusOf(i) === 'tbd').length;
+  els.summaryRow.innerHTML = `
+    <div class="summary-card" style="border-left-color:var(--red)">
+      <div class="num">${urgent}</div><div class="label">🔴 締切7日以内</div>
+    </div>
+    <div class="summary-card" style="border-left-color:var(--green)">
+      <div class="num">${open}</div><div class="label">🟢 現在公募中</div>
+    </div>
+    <div class="summary-card" style="border-left-color:var(--gray)">
+      <div class="num">${tbd}</div><div class="label">⚪ 未発表・次回待ち</div>
+    </div>
+    <div class="summary-card" style="border-left-color:var(--teal)">
+      <div class="num">${items.length}</div><div class="label">📋 収録制度数</div>
+    </div>`;
+}
+
+function renderCards(items) {
+  els.cardList.innerHTML = '';
+  els.emptyMsg.style.display = items.length ? 'none' : 'block';
+  items
+    .slice()
+    .sort((a, b) => {
+      const da = daysUntil(a.deadline);
+      const db = daysUntil(b.deadline);
+      if (da === null && db === null) return 0;
+      if (da === null) return 1;
+      if (db === null) return -1;
+      return da - db;
+    })
+    .forEach(item => {
+      const computed = statusOf(item);
+      const card = document.createElement('div');
+      card.className = `card ${computed}`;
+      card.innerHTML = `
+        <div class="card-top">
+          <div>
+            <span class="cat-tag">${item.category}</span>
+            <div class="card-title">${item.name}</div>
+            <div class="card-org">${item.organization}</div>
+          </div>
+          <span class="badge ${badgeClass(computed)}">${statusLabel(item, computed)}</span>
+        </div>
+        <div class="card-body">
+          <div class="card-row"><span class="k">補助額</span>${item.amount}</div>
+          <div class="card-row"><span class="k">補助率</span>${item.rate || '—'}</div>
+          <div class="card-row"><span class="k">締切・時期</span>${item.deadline_label || '—'}</div>
+          ${item.note ? `<div class="card-note">💡 ${item.note}</div>` : ''}
+          ${item.url ? `<a class="card-link" href="${item.url}" target="_blank" rel="noopener">公式サイトを見る ↗</a>` : ''}
+        </div>`;
+      els.cardList.appendChild(card);
+    });
+}
+
+function applyFilters() {
+  const status = els.filterStatus.value;
+  const category = els.filterCategory.value;
+  const keyword = els.searchBox.value.trim().toLowerCase();
+  const filtered = allItems.filter(item => {
+    if (status !== 'all' && statusOf(item) !== status &&
+        !(status === 'open' && statusOf(item) === 'soon')) return false;
+    if (category !== 'all' && item.category !== category) return false;
+    if (keyword) {
+      const hay = `${item.name} ${item.organization} ${item.note || ''}`.toLowerCase();
+      if (!hay.includes(keyword)) return false;
+    }
+    return true;
+  });
+  renderCards(filtered);
+}
+
+[els.filterStatus, els.filterCategory].forEach(el => el.addEventListener('change', applyFilters));
+els.searchBox.addEventListener('input', applyFilters);
+
+fetch(DATA_URL)
+  .then(res => {
+    if (!res.ok) throw new Error('データの読み込みに失敗しました');
+    return res.json();
+  })
+  .then(data => {
+    allItems = data.subsidies || [];
+    els.loadingMsg.style.display = 'none';
+
+    els.updatedDate.textContent = data.updated || '不明';
+    const since = daysUntil(data.updated) !== null ? -daysUntil(data.updated) : null;
+    if (since !== null) {
+      els.daysSince.textContent = since === 0 ? '本日更新' : `${since}日前に更新`;
+    }
+
+    const categories = [...new Set(allItems.map(i => i.category))];
+    categories.forEach(c => {
+      const opt = document.createElement('option');
+      opt.value = c; opt.textContent = c;
+      els.filterCategory.appendChild(opt);
+    });
+
+    renderSummary(allItems);
+    renderCards(allItems);
+  })
+  .catch(err => {
+    els.loadingMsg.textContent = '⚠️ データの読み込みに失敗しました。再読み込みしてください。';
+    console.error(err);
+  });
+</script>
+
+</body>
+</html>
