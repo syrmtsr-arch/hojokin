@@ -426,8 +426,33 @@
       <span class="badge-label">件の制度を収録</span>
     </div>
   </div>
-  <p class="date-line">更新：2026年6月5日</p>
+  <p class="date-line">更新：<span id="last-updated-date">2026年6月8日</span></p>
+  <p class="update-line">
+    <a class="update-btn" href="https://claude.ai/code" target="_blank" rel="noopener"
+       title="claude.ai の「補助金情報 自動更新」ルーティンを開きます。手動で今すぐ実行することも、毎月1日の自動更新を待つこともできます。">
+      🔄 最新情報に更新する
+    </a>
+    <span class="update-note">（クリックすると claude.ai のルーティン画面が開きます。「補助金情報 自動更新（HTMLの更新ボタン用）」を実行してください。自動でも毎月1日に更新されます）</span>
+  </p>
 </div>
+
+<style>
+  .update-line { margin-top: 8px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .update-btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background: var(--teal, #0F6674);
+    color: #fff;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: opacity 0.15s ease;
+  }
+  .update-btn:hover { opacity: 0.85; }
+  .update-note { font-size: 0.78rem; color: #666; }
+</style>
 
 <!-- ============================================================
      Slide 2: Table of Contents
