@@ -1,5 +1,11 @@
 # Wiki 操作ログ
 
+## [2026-06-12] update | スタッフ向け作業マニュアルを作成
+
+- バイトスタッフへのリポジトリ共有（pushなし・パブリック閲覧前提）に向けて、`STAFF_MANUAL.md` / `STAFF_MANUAL.html` をリポジトリルートに作成
+- 内容：プロジェクトのclone/pull手順、Claude Codeでの開き方、`raw/inbox/subsidy-guide-2026.html`での補助金情報閲覧方法、note記事下書きの作成手順（構成テンプレート・必須項目・Markdownの開き方）、トラブルシューティング
+- wiki配下のページではないため`wiki/index.md`の対象外（リポジトリ直下のドキュメントとして管理）
+
 ## [2026-06-12] update | 定期巡回URL一覧にSBIR・省庁・自治体公募サイトを追加
 
 - [[subsidy-calendar-2026]]（wiki/sources・raw/inbox両方）の「定期巡回URL一覧」に以下を追加
