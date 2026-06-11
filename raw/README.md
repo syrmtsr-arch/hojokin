@@ -19,6 +19,19 @@
 
 ---
 
+## Webアプリ（公開版）
+
+以下のURLで誰でも閲覧できます。
+
+**https://syrmtsr-arch.github.io/hojokin/**
+
+- ホスティング：GitHub Pages（リポジトリ `syrmtsr-arch/hojokin`）
+- デプロイ方法：`webapp/**` を `master` ブランチにpushすると、GitHub Actions（`.github/workflows/deploy-pages.yml`）が自動でビルド・公開
+- 手動で再デプロイしたい場合：`gh workflow run deploy-pages.yml --repo syrmtsr-arch/hojokin`
+- Pages設定：リポジトリの Settings → Pages → Build and deployment → Source は「GitHub Actions」
+
+---
+
 ## カレンダーを読むだけなら
 
 `subsidy-calendar-2026.md` を開いてください。Obsidian・VS Code・NotionなどのMarkdownビューアで読めます。
