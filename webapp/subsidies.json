@@ -1,6 +1,6 @@
 {
-  "updated": "2026-06-08",
-  "source_note": "raw/inbox/subsidy-database-ishikawa-startup-2026.md / subsidy-calendar-2026.md を元に生成。自動更新ルーティンがこのファイルを書き換えます。",
+  "updated": "2026-06-11",
+  "source_note": "raw/inbox/subsidy-database-ishikawa-startup-2026.md / subsidy-calendar-2026.md を元に生成。自動更新ルーティンがこのファイルを書き換えます。2026-06-11時点でISICO公式ページを確認し、6/12締切の各制度（のとスタ・成長戦略ファンド・スタートアップ創出支援事業等）はいずれも公募中で延長等の情報なしを確認済み。",
   "subsidies": [
     {
       "id": "noto-sta",

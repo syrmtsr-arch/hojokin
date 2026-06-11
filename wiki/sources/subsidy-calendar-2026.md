@@ -3,7 +3,7 @@ title: 石川県・北陸スタートアップ支援制度カレンダー（2026
 type: synthesis
 tags: [補助金, カレンダー, 締切, スタートアップ, 創業支援]
 created: 2026-06-04
-updated: 2026-06-08
+updated: 2026-06-11
 sources: [subsidy-database-ishikawa-startup-2026.md]
 ---
 
@@ -168,3 +168,11 @@ sources: [subsidy-database-ishikawa-startup-2026.md]
 | いしかわクリエイトラボ | https://www.isico.or.jp/isp/crelabo |
 | I-O DATA財団 | https://iodatazaidan.wixsite.com/foundation |
 | 金沢市 起業支援一覧 | https://ishikawa-startup.jp/support-isico/?active-tab=tab-3 |
+| ISICO 補助金・公募情報一覧 | https://www.isico.or.jp/support/ |
+| 金沢市 補助金・助成金一覧 | https://www4.city.kanazawa.lg.jp/hojokin_joseikin/index.html |
+| SBIR制度ポータル（内閣府） | https://sbir.go.jp/ |
+| ミラサポplus（中小企業庁） | https://mirasapo-plus.go.jp/ |
+| jGrants（公募一覧） | https://www.jgrants-portal.go.jp/ |
+| 中小企業庁 予算・公募案内 | https://www.chusho.meti.go.jp/koukai/yosan/index.html |
+| NEDO公募情報 | https://www.nedo.go.jp/koubo/index.html |
+| JST公募情報 | https://www.jst.go.jp/koubo/ |
