@@ -1,5 +1,5 @@
 ---
-title: 金沢市（창業支援制度）
+title: 金沢市（創業支援制度）
 type: entity
 tags: [組織, 自治体, 金沢市, 創業支援]
 created: 2026-06-05

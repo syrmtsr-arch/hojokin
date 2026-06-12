@@ -1,5 +1,14 @@
 # Wiki 操作ログ
 
+## [2026-06-12] update | Wikiビューア（webapp/wiki/）を新規作成
+
+- 既存の補助金ナビ・作業マニュアルとは別の新規Webアプリとして、wiki全ページ（overview/sources/entities/concepts/synthesis/log）を閲覧できるサイドバー付きビューアを作成
+- `scripts/build_wiki_app.py`：wiki/*.mdのフロントマターと本文を`webapp/wiki/content.json`にまとめるビルドスクリプトを新規作成（wiki更新後に再実行する運用をCLAUDE.mdに追記）
+- `webapp/wiki/index.html`：カテゴリ別ナビ・全文検索・[[wikilink]]解決・被リンク表示を備えたビューア
+- `webapp/index.html`・`webapp/manual.html`に新Wikiへの相互リンクを追加
+- `wiki/entities/kanazawa-city.md`のtitleの誤字（창業→創業）を修正
+- GitHub Pagesの既存デプロイ（`webapp/`全体を公開）に相乗りするため、ワークフロー変更は不要
+
 ## [2026-06-12] update | スタッフ向け作業マニュアルを作成
 
 - バイトスタッフへのリポジトリ共有（pushなし・パブリック閲覧前提）に向けて、`STAFF_MANUAL.md` / `STAFF_MANUAL.html` をリポジトリルートに作成

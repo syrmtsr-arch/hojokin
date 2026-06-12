@@ -6,6 +6,7 @@
 - **rawフォルダーは読み取り専用**：LLMはrawの内容を読むが、編集・削除しない
 - **wikiフォルダーはLLMが管理**：ユーザーは読むだけでよい
 - **情報の積み重ねが目標**：新しいソースを追加するたびにwikiが充実していく
+- **wikiページを追加・編集したら `webapp/wiki/` のWikiビューアも更新する**：`python scripts/build_wiki_app.py` を実行して `webapp/wiki/content.json` を再生成し、`master`にpushすればGitHub Pagesで自動公開される（`webapp/index.html`＝補助金ナビ、`webapp/manual.html`＝作業マニュアル、`webapp/wiki/`＝Wikiビューア）
 
 ## インボックスの場所
 

@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TENJO KANAZAWA Wiki｜石川県スタートアップ支援ナレッジベース</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+  :root {
+    --navy: #16243B;
+    --navy-2: #1F3354;
+    --teal: #0F8C8C;
+    --teal-lt: #12B5B5;
+    --gold: #E8A23D;
+    --bg: #F4F6F9;
+    --card: #FFFFFF;
+    --ink: #1F2937;
+    --ink-soft: #5B6776;
+    --line: #E2E8F0;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ---------- Sidebar ---------- */
+  .sidebar {
+    width: 290px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
+    color: #DCE6F2;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+  .sidebar-head {
+    padding: 22px 20px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .sidebar-head .brand {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--teal-lt);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .sidebar-head h1 {
+    margin: 0;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    font-weight: 700;
+    color: #fff;
+  }
+  .sidebar-head .sub {
+    margin-top: 6px;
+    font-size: 0.76rem;
+    color: #9FB2C9;
+    line-height: 1.5;
+  }
+
+  .search-wrap {
+    padding: 14px 16px 8px;
+  }
+  .search-wrap input {
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+    font-size: 0.85rem;
+    outline: none;
+  }
+  .search-wrap input::placeholder { color: #7E92AB; }
+  .search-wrap input:focus { border-color: var(--teal-lt); background: rgba(255,255,255,0.1); }
+
+  .nav-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 4px 10px 20px;
+  }
+  .nav-group { margin-top: 14px; }
+  .nav-group-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7E92AB;
+    padding: 4px 10px;
+    font-weight: 700;
+  }
+  .nav-item {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 7px;
+    color: #C9D6E6;
+    text-decoration: none;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s;
+  }
+  .nav-item:hover { background: rgba(255,255,255,0.06); color: #fff; }
+  .nav-item.active {
+    background: rgba(18,181,181,0.18);
+    color: #fff;
+    box-shadow: inset 3px 0 0 var(--teal-lt);
+  }
+  .nav-item .dot {
+    flex-shrink: 0;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #4B6280;
+    margin-top: 6px;
+  }
+  .nav-item.active .dot { background: var(--teal-lt); }
+  .nav-empty {
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    color: #6E84A0;
+    font-style: italic;
+  }
+
+  .sidebar-foot {
+    padding: 12px 18px 16px;
+    font-size: 0.7rem;
+    color: #6E84A0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .sidebar-foot .foot-links {
+    display: flex; gap: 12px; margin-bottom: 8px;
+  }
+  .sidebar-foot .foot-links a {
+    color: var(--teal-lt); text-decoration: none; font-size: 0.74rem;
+  }
+  .sidebar-foot .foot-links a:hover { text-decoration: underline; }
+
+  /* ---------- Main ---------- */
+  .main-wrap {
+    flex: 1;
+    min-width: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: rgba(244,246,249,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 12px 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .menu-toggle {
+    display: none;
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    width: 34px; height: 34px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .breadcrumb {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+  .breadcrumb a { color: var(--teal); text-decoration: none; cursor: pointer; }
+  .breadcrumb a:hover { text-decoration: underline; }
+
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 28px 100px;
+  }
+
+  .page-head {
+    margin-bottom: 22px;
+  }
+  .page-type {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--teal);
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .page-type.overview { background: var(--gold); }
+  .page-type.log { background: #6B7280; }
+  .page-type.concept { background: #6D5BD0; }
+  .page-type.synthesis { background: #D2526B; }
+  .page-type.entity { background: var(--navy-2); }
+  .page-type.source { background: var(--teal); }
+
+  .page-title {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0 0 8px;
+    line-height: 1.35;
+  }
+  .page-meta {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    font-size: 0.78rem; color: var(--ink-soft);
+  }
+  .tag {
+    background: #EEF2F7;
+    color: var(--navy-2);
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 0.74rem;
+  }
+
+  /* ---------- Rendered markdown ---------- */
+  .markdown-body { font-size: 0.96rem; line-height: 1.85; }
+  .markdown-body h1 { display: none; } /* title shown in page-head */
+  .markdown-body h2 {
+    font-size: 1.25rem; color: var(--navy);
+    margin: 34px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--line);
+  }
+  .markdown-body h3 {
+    font-size: 1.05rem; color: var(--navy-2);
+    margin: 26px 0 10px;
+  }
+  .markdown-body p { margin: 10px 0; }
+  .markdown-body ul, .markdown-body ol { padding-left: 1.4em; margin: 10px 0; }
+  .markdown-body li { margin: 4px 0; }
+  .markdown-body a { color: var(--teal); text-decoration: none; }
+  .markdown-body a:hover { text-decoration: underline; }
+  .markdown-body a.wikilink {
+    background: #E6F4F4;
+    color: #0B6E6E;
+    border-radius: 5px;
+    padding: 1px 6px;
+    font-weight: 600;
+  }
+  .markdown-body a.wikilink::before { content: "🔗 "; font-size: 0.75em; }
+  .markdown-body a.wikilink.missing {
+    background: #F3F4F6; color: #9CA3AF; cursor: default;
+  }
+  .markdown-body blockquote {
+    margin: 14px 0;
+    padding: 10px 16px;
+    border-left: 4px solid var(--gold);
+    background: #FFF8EC;
+    border-radius: 0 8px 8px 0;
+    color: #6B5320;
+  }
+  .markdown-body code {
+    background: #EEF2F7; border-radius: 4px; padding: 1px 6px;
+    font-size: 0.86em; color: var(--navy-2);
+  }
+  .markdown-body pre {
+    background: #1B2A40; color: #E5ECF5; border-radius: 10px;
+    padding: 14px 16px; overflow-x: auto; font-size: 0.82rem; line-height: 1.6;
+  }
+  .markdown-body pre code { background: none; color: inherit; padding: 0; }
+  .markdown-body hr { border: none; border-top: 1px solid var(--line); margin: 30px 0; }
+  .markdown-body table {
+    border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 0.85rem;
+    display: block; overflow-x: auto; white-space: nowrap;
+  }
+  .markdown-body th, .markdown-body td {
+    border: 1px solid var(--line); padding: 8px 12px; text-align: left;
+  }
+  .markdown-body th { background: #EEF2F7; color: var(--navy); font-weight: 700; }
+  .markdown-body tr:nth-child(even) td { background: #FAFBFD; }
+  .markdown-body strong { color: var(--navy); }
+
+  /* backlinks */
+  .backlinks {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+  }
+  .backlinks h4 {
+    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--ink-soft); margin: 0 0 10px;
+  }
+  .backlinks ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+  .backlinks a {
+    color: var(--teal); text-decoration: none; font-size: 0.86rem;
+  }
+  .backlinks a:hover { text-decoration: underline; }
+
+  /* home dashboard */
+  .home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .home-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    text-decoration: none;
+    color: var(--ink);
+    box-shadow: 0 1px 3px rgba(20,30,50,0.04);
+    transition: transform 0.12s, box-shadow 0.12s;
+    display: block;
+  }
+  .home-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(20,30,50,0.08);
+  }
+  .home-card .home-card-type {
+    font-size: 0.7rem; font-weight: 700; color: var(--teal); text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .home-card .home-card-title {
+    font-size: 0.96rem; font-weight: 700; color: var(--navy); margin-top: 4px;
+  }
+  .home-card .home-card-updated {
+    font-size: 0.74rem; color: var(--ink-soft); margin-top: 6px;
+  }
+
+  .empty-search {
+    padding: 60px 0; text-align: center; color: var(--ink-soft);
+  }
+
+  /* Responsive */
+  @media (max-width: 860px) {
+    .sidebar {
+      position: fixed;
+      left: 0; top: 0;
+      transform: translateX(-100%);
+      transition: transform 0.2s ease;
+      z-index: 50;
+      width: 280px;
+      box-shadow: 4px 0 24px rgba(0,0,0,0.2);
+    }
+    .sidebar.open { transform: translateX(0); }
+    .menu-toggle { display: inline-block; }
+    main { padding: 24px 16px 80px; }
+    .topbar { padding: 10px 14px; }
+  }
+  .overlay {
+    display: none;
+    position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 40;
+  }
+  .overlay.show { display: block; }
+</style>
+</head>
+<body>
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-head">
+    <div class="brand">TENJO KANAZAWA</div>
+    <h1>スタートアップ支援<br>ナレッジベースWiki</h1>
+    <div class="sub">石川県・北陸の創業支援制度に関する調査・知見の蓄積</div>
+  </div>
+  <div class="search-wrap">
+    <input id="search" type="text" placeholder="ページ・タグ・本文を検索…">
+  </div>
+  <nav class="nav-scroll" id="nav"></nav>
+  <div class="sidebar-foot">
+    <div class="foot-links">
+      <a href="../">補助金ナビ</a>
+      <a href="../manual.html">作業マニュアル</a>
+    </div>
+    <div id="generated"></div>
+  </div>
+</aside>
+
+<div class="main-wrap" id="main-wrap">
+  <div class="topbar">
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <div class="breadcrumb" id="breadcrumb"></div>
+  </div>
+  <main id="content"></main>
+</div>
+
+<script>
+const TYPE_ORDER = ["overview", "source", "entity", "concept", "synthesis", "log"];
+const TYPE_LABELS_FALLBACK = {
+  overview: "概要", source: "ソース要約", entity: "エンティティ",
+  concept: "概念", synthesis: "分析・考察", log: "更新履歴", page: "その他"
+};
+
+let DATA = null;
+let PAGES_BY_ID = {};
+
+const els = {
+  nav: document.getElementById('nav'),
+  content: document.getElementById('content'),
+  search: document.getElementById('search'),
+  breadcrumb: document.getElementById('breadcrumb'),
+  generated: document.getElementById('generated'),
+  sidebar: document.getElementById('sidebar'),
+  overlay: document.getElementById('overlay'),
+  menuToggle: document.getElementById('menu-toggle'),
+};
+
+fetch('content.json')
+  .then(r => r.json())
+  .then(data => {
+    DATA = data;
+    DATA.pages.forEach(p => PAGES_BY_ID[p.id] = p);
+    els.generated.textContent = `データ生成日: ${data.generated}`;
+    buildNav();
+    router();
+  })
+  .catch(err => {
+    els.content.innerHTML = `<p style="color:#DC2626">⚠️ content.json の読み込みに失敗しました。</p>`;
+    console.error(err);
+  });
+
+window.addEventListener('hashchange', router);
+
+els.menuToggle.addEventListener('click', () => {
+  els.sidebar.classList.toggle('open');
+  els.overlay.classList.toggle('show');
+});
+els.overlay.addEventListener('click', () => {
+  els.sidebar.classList.remove('open');
+  els.overlay.classList.remove('show');
+});
+
+els.search.addEventListener('input', () => {
+  const q = els.search.value.trim().toLowerCase();
+  buildNav(q);
+  if (q) renderSearchResults(q);
+});
+
+function typeLabel(type) {
+  return (DATA && DATA.typeLabels && DATA.typeLabels[type]) || TYPE_LABELS_FALLBACK[type] || type;
+}
+
+function buildNav(query) {
+  els.nav.innerHTML = '';
+  const currentId = location.hash.replace('#/', '') || 'overview';
+
+  TYPE_ORDER.forEach(type => {
+    let pages = DATA.pages.filter(p => p.type === type);
+    if (query) {
+      pages = pages.filter(p =>
+        p.title.toLowerCase().includes(query) ||
+        (p.tags || []).some(t => t.toLowerCase().includes(query)) ||
+        p.content.toLowerCase().includes(query)
+      );
+    }
+    const group = document.createElement('div');
+    group.className = 'nav-group';
+    const title = document.createElement('div');
+    title.className = 'nav-group-title';
+    title.textContent = typeLabel(type);
+    group.appendChild(title);
+
+    if (pages.length === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'nav-empty';
+      empty.textContent = '該当ページなし';
+      group.appendChild(empty);
+    } else {
+      pages.forEach(p => {
+        const a = document.createElement('a');
+        a.className = 'nav-item' + (p.id === currentId ? ' active' : '');
+        a.href = `#/${p.id}`;
+        a.innerHTML = `<span class="dot"></span><span>${escapeHtml(p.title)}</span>`;
+        a.addEventListener('click', () => {
+          els.sidebar.classList.remove('open');
+          els.overlay.classList.remove('show');
+        });
+        group.appendChild(a);
+      });
+    }
+    els.nav.appendChild(group);
+  });
+}
+
+function router() {
+  const id = location.hash.replace('#/', '') || 'overview';
+  if (els.search.value.trim()) {
+    els.search.value = '';
+    buildNav();
+  }
+  if (id === 'overview' && !PAGES_BY_ID['overview']) {
+    renderHome();
+    return;
+  }
+  const page = PAGES_BY_ID[id];
+  if (!page) {
+    renderHome();
+    return;
+  }
+  if (id === 'overview') {
+    renderHome(page);
+  } else {
+    renderPage(page);
+  }
+  buildNav();
+  requestAnimationFrame(() => { document.getElementById('main-wrap').scrollTop = 0; });
+}
+
+function escapeHtml(s) {
+  return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function resolveWikiLinks(md) {
+  return md.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (match, target, label) => {
+    target = target.trim();
+    const display = escapeHtml((label || target).trim());
+    // target may include a path like "raw/inbox/xxx.md" — take the basename without extension
+    const id = target.split('/').pop().replace(/\.md$/, '');
+    if (PAGES_BY_ID[id]) {
+      return `<a href="#/${id}" class="wikilink">${display}</a>`;
+    }
+    return `<a href="#" class="wikilink missing" title="未作成のページ">${display}</a>`;
+  });
+}
+
+function renderMarkdown(md) {
+  const withLinks = resolveWikiLinks(md);
+  return marked.parse(withLinks, { gfm: true, breaks: false });
+}
+
+function findBacklinks(id) {
+  const refs = [];
+  DATA.pages.forEach(p => {
+    if (p.id === id) return;
+    const re = new RegExp(`\\[\\[${id}(\\||\\]\\])`);
+    if (re.test(p.content)) refs.push(p);
+  });
+  return refs;
+}
+
+function renderPage(page) {
+  els.breadcrumb.innerHTML = `<a href="#/overview">概要</a> ／ ${typeLabel(page.type)} ／ ${escapeHtml(page.title)}`;
+
+  const tags = (page.tags || []).map(t => `<span class="tag">#${escapeHtml(t)}</span>`).join('');
+  const updated = page.updated ? `<span>更新: ${escapeHtml(page.updated)}</span>` : '';
+
+  const bodyHtml = renderMarkdown(page.content);
+
+  const backs = findBacklinks(page.id);
+  let backlinksHtml = '';
+  if (backs.length) {
+    backlinksHtml = `
+      <div class="backlinks">
+        <h4>このページを参照しているページ</h4>
+        <ul>${backs.map(b => `<li><a href="#/${b.id}">${escapeHtml(b.title)}</a></li>`).join('')}</ul>
+      </div>`;
+  }
+
+  els.content.innerHTML = `
+    <div class="page-head">
+      <span class="page-type ${page.type}">${typeLabel(page.type)}</span>
+      <h1 class="page-title">${escapeHtml(page.title)}</h1>
+      <div class="page-meta">${updated}${tags}</div>
+    </div>
+    <div class="markdown-body">${bodyHtml}</div>
+    ${backlinksHtml}
+  `;
+}
+
+function renderHome(overviewPage) {
+  els.breadcrumb.textContent = '概要';
+  let intro = '';
+  if (overviewPage) {
+    intro = `<div class="markdown-body">${renderMarkdown(overviewPage.content)}</div>`;
+  }
+
+  const groups = TYPE_ORDER.filter(t => t !== 'overview' && t !== 'log');
+  let cardsHtml = '';
+  groups.forEach(type => {
+    const pages = DATA.pages.filter(p => p.type === type);
+    if (!pages.length) return;
+    cardsHtml += `<h2 style="font-size:1.05rem;color:var(--navy);margin:28px 0 6px;">${typeLabel(type)}</h2>`;
+    cardsHtml += '<div class="home-grid">';
+    pages.forEach(p => {
+      cardsHtml += `
+        <a class="home-card" href="#/${p.id}">
+          <div class="home-card-type">${typeLabel(p.type)}</div>
+          <div class="home-card-title">${escapeHtml(p.title)}</div>
+          ${p.updated ? `<div class="home-card-updated">更新: ${escapeHtml(p.updated)}</div>` : ''}
+        </a>`;
+    });
+    cardsHtml += '</div>';
+  });
+
+  els.content.innerHTML = `
+    <div class="page-head">
+      <span class="page-type overview">概要</span>
+      <h1 class="page-title">石川県スタートアップ支援 ナレッジベース</h1>
+    </div>
+    ${intro}
+    ${cardsHtml}
+  `;
+}
+
+function renderSearchResults(query) {
+  const matches = DATA.pages.filter(p =>
+    p.title.toLowerCase().includes(query) ||
+    (p.tags || []).some(t => t.toLowerCase().includes(query)) ||
+    p.content.toLowerCase().includes(query)
+  );
+  els.breadcrumb.textContent = `検索: 「${query}」（${matches.length}件）`;
+
+  if (!matches.length) {
+    els.content.innerHTML = `<div class="empty-search">「${escapeHtml(query)}」に一致するページが見つかりませんでした。</div>`;
+    return;
+  }
+
+  let html = `<div class="page-head"><h1 class="page-title">検索結果: 「${escapeHtml(query)}」</h1></div><div class="home-grid">`;
+  matches.forEach(p => {
+    html += `
+      <a class="home-card" href="#/${p.id}">
+        <div class="home-card-type">${typeLabel(p.type)}</div>
+        <div class="home-card-title">${escapeHtml(p.title)}</div>
+        ${p.updated ? `<div class="home-card-updated">更新: ${escapeHtml(p.updated)}</div>` : ''}
+      </a>`;
+  });
+  html += '</div>';
+  els.content.innerHTML = html;
+}
+</script>
+
+</body>
+</html>

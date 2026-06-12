@@ -98,6 +98,10 @@
     border-radius: 6px; padding: 2px 8px; margin-right: 6px;
   }
   footer { text-align: center; font-size: 0.78rem; color: var(--gray); padding: 20px; }
+  footer a.wiki-link {
+    display: inline-block; margin-top: 8px; color: #fff; background: var(--teal);
+    border-radius: 999px; padding: 6px 16px; text-decoration: none; font-weight: 600;
+  }
   #empty-msg { text-align: center; color: var(--gray); padding: 40px 0; display: none; }
   #loading-msg { text-align: center; color: var(--gray); padding: 40px 0; }
 </style>
@@ -137,6 +141,7 @@
 <footer>
   データ出典：<a href="../wiki/sources/subsidy-database-ishikawa-startup-2026.md" style="color:var(--teal)">補助金データベース</a>
   ／ 自動更新ルーティン「補助金情報 自動更新」が毎月1日に最新化（手動更新も可）
+  <div><a class="wiki-link" href="./wiki/">📚 ナレッジベースWikiを見る</a></div>
 </footer>
 
 <script>
