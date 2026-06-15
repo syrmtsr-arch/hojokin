@@ -1,6 +1,6 @@
 {
-  "updated": "2026-06-11",
-  "source_note": "raw/inbox/subsidy-database-ishikawa-startup-2026.md / subsidy-calendar-2026.md を元に生成。自動更新ルーティンがこのファイルを書き換えます。2026-06-11時点でISICO公式ページを確認し、6/12締切の各制度（のとスタ・成長戦略ファンド・スタートアップ創出支援事業等）はいずれも公募中で延長等の情報なしを確認済み。",
+  "updated": "2026-06-15",
+  "source_note": "raw/inbox/subsidy-database-ishikawa-startup-2026.md / subsidy-calendar-2026.md を元に生成。自動更新ルーティンがこのファイルを書き換えます。2026-06-15時点でISICO公式ページを確認し、6/12締切の各制度（のとスタ・成長戦略ファンド・スタートアップ創出支援事業等）はいずれも締切済みで次回未発表。また起業支援金（いしかわ移住支援事業・令和8年度）が2026/4/1〜6/15で公募中であることを新たに確認（本日締切）。加えて、TENJO内部向けの参照情報として、国の研究開発型公募（SBIR等・全て締切済み・来年度参考）と大学・研究機関連携・アカデミア向け公募（Y-tec、関西エネルギー・リサイクル科学研究振興財団）を新規セクションとして追加。",
   "subsidies": [
     {
       "id": "noto-sta",
@@ -11,7 +11,7 @@
       "rate": "4分の3以内",
       "deadline": "2026-06-12",
       "deadline_label": "2026年6月12日",
-      "status": "公募中",
+      "status": "締切済み",
       "url": "https://notosta.info/",
       "note": "能登地域での実証事業＋専任プロデューサー伴走。デモデイは2026年2月（東京）予定"
     },
@@ -24,7 +24,7 @@
       "rate": "区分により異なる",
       "deadline": "2026-06-12",
       "deadline_label": "2026年6月12日 16時必着",
-      "status": "公募中",
+      "status": "締切済み",
       "url": "https://www.isico.or.jp/site/shinseihin/challengefund.html",
       "note": "採択通知は2026年9月予定。jGrantsまたはメール（shigen@isico.or.jp）で申請"
     },
@@ -37,7 +37,7 @@
       "rate": "2/3以内",
       "deadline": "2026-06-12",
       "deadline_label": "2026年6月12日 16時必着",
-      "status": "公募中",
+      "status": "締切済み",
       "url": "https://www.isico.or.jp/site/shinseihin/dxgx-rd-r8.html",
       "note": "県内企業を代表とする2者以上の連携体が対象"
     },
@@ -50,7 +50,7 @@
       "rate": "10/10（全額補助）",
       "deadline": "2026-06-12",
       "deadline_label": "2026年6月12日 16時必着",
-      "status": "公募中",
+      "status": "締切済み",
       "url": "https://www.isico.or.jp/site/shinseihin/fs-r8.html",
       "note": "単独企業または2者以上の連携体が対象"
     },
@@ -63,7 +63,7 @@
       "rate": "10/10（全額補助）",
       "deadline": "2026-06-12",
       "deadline_label": "2026年6月12日 16時必着",
-      "status": "公募中",
+      "status": "締切済み",
       "url": "https://www.isico.or.jp/site/shinseihin/nationalprofs-r8.html",
       "note": "国の競争的資金獲得を目指す企業向け"
     },
@@ -76,7 +76,7 @@
       "rate": "10/10（全額補助）",
       "deadline": "2026-06-12",
       "deadline_label": "2026年6月12日 16時必着",
-      "status": "公募中",
+      "status": "締切済み",
       "url": "https://www.isico.or.jp/site/sogyo/startup-hojokin.html",
       "note": "起業5年以内、または令和12年3月31日までに県内起業予定の方が対象"
     },
@@ -89,7 +89,7 @@
       "rate": "3/4以内",
       "deadline": "2026-06-12",
       "deadline_label": "2026年6月12日 16時必着",
-      "status": "公募中",
+      "status": "締切済み",
       "url": "https://www.isico.or.jp/site/sogyo/startup-hojokin.html",
       "note": "起業10年以内・県内で開業届または本店登記済みの方が対象"
     },
@@ -147,16 +147,16 @@
     },
     {
       "id": "kigyou-shienkin-iju",
-      "name": "起業支援金（いしかわ移住支援事業）",
+      "name": "起業支援金（いしかわ移住支援事業・令和8年度）",
       "organization": "ISICO 経営支援課",
       "category": "補助金",
       "amount": "最大200万円（補助率1/2以内、移住支援金と合わせ最大300万円）",
       "rate": "1/2以内",
-      "deadline": null,
-      "deadline_label": "令和8年度の公募は未発表",
-      "status": "未発表",
-      "url": "https://www.isico.or.jp/support/dgnet/d41170888.html",
-      "note": "東京23区から石川県へ移住して起業する方が対象。令和7年度は2025年5月30日締切で終了。例年4〜5月頃に公募開始の傾向"
+      "deadline": "2026-06-15",
+      "deadline_label": "2026年6月15日 17時必着（本日締切）",
+      "status": "本日締切",
+      "url": "https://www.isico.or.jp/support/dgnet/d41179008.html",
+      "note": "東京圏（埼玉・千葉・東京・神奈川）から石川県へ移住して起業する方が対象。2026年4月1日から公募中で本日が締切。次回公募（令和9年度）は例年4〜5月頃開始の傾向"
     },
     {
       "id": "mitani-business-contest",
@@ -261,6 +261,110 @@
       "status": "随時受付",
       "url": "https://www.city.kanazawa.lg.jp/",
       "note": "金沢市内の中小企業者等が対象"
+    },
+    {
+      "id": "sbir-nedo-renketsu",
+      "name": "SBIR推進プログラム（連結型）",
+      "organization": "NEDO",
+      "category": "国の研究開発型公募（SBIR等）",
+      "amount": "要公募要領確認",
+      "rate": "—",
+      "deadline": "2026-04-03",
+      "deadline_label": "2026年3月16日〜4月3日（締切済み）",
+      "status": "締切済み",
+      "url": "https://sbir.csti-startup-policy.go.jp/koubo",
+      "note": "スタートアップ・中小企業向け。令和8年度分は締切済み。次年度（令和9年度）の同時期再公募を継続フォロー"
+    },
+    {
+      "id": "sbir-jst-start-phase1",
+      "name": "STARTプロジェクト推進型 SBIRフェーズ1",
+      "organization": "JST",
+      "category": "国の研究開発型公募（SBIR等）",
+      "amount": "要公募要領確認",
+      "rate": "—",
+      "deadline": "2026-04-30",
+      "deadline_label": "2026年3月23日〜4月30日（締切済み）",
+      "status": "締切済み",
+      "url": "https://sbir.csti-startup-policy.go.jp/koubo",
+      "note": "スタートアップ向け。令和8年度分は締切済み。次年度の同時期再公募を継続フォロー"
+    },
+    {
+      "id": "sbir-mlit-koutsuun",
+      "name": "交通運輸技術開発推進制度（マッチング推進型）",
+      "organization": "国土交通省",
+      "category": "国の研究開発型公募（SBIR等）",
+      "amount": "要公募要領確認",
+      "rate": "—",
+      "deadline": "2026-05-22",
+      "deadline_label": "2026年4月6日〜5月22日（締切済み）",
+      "status": "締切済み",
+      "url": "https://sbir.csti-startup-policy.go.jp/koubo",
+      "note": "中小企業等向け。令和8年度分は締切済み。次年度の同時期再公募を継続フォロー"
+    },
+    {
+      "id": "sbir-boueisouchou-anpo",
+      "name": "安全保障技術研究推進制度（令和8年度）",
+      "organization": "防衛装備庁",
+      "category": "国の研究開発型公募（SBIR等）",
+      "amount": "要公募要領確認",
+      "rate": "—",
+      "deadline": "2026-05-20",
+      "deadline_label": "2026年3月13日〜5月20日（締切済み）",
+      "status": "締切済み",
+      "url": "https://sbir.csti-startup-policy.go.jp/koubo",
+      "note": "スタートアップ・中小企業向け。令和8年度分は締切済み。次年度の同時期再公募を継続フォロー"
+    },
+    {
+      "id": "sbir-nedo-ikkitsuukan-phase2",
+      "name": "SBIR推進プログラム（一気通貫型・フェーズ2）",
+      "organization": "NEDO",
+      "category": "国の研究開発型公募（SBIR等）",
+      "amount": "要公募要領確認",
+      "rate": "—",
+      "deadline": "2026-06-12",
+      "deadline_label": "〜2026年6月12日（締切済み）",
+      "status": "締切済み",
+      "url": "https://sbir.csti-startup-policy.go.jp/koubo",
+      "note": "スタートアップ・中小企業向け。令和8年度分は締切済み。次年度の同時期再公募を継続フォロー"
+    },
+    {
+      "id": "sbir-env-startup-rd",
+      "name": "環境スタートアップ研究開発支援事業（令和8年度環境保全研究費補助金）",
+      "organization": "環境省",
+      "category": "国の研究開発型公募（SBIR等）",
+      "amount": "要公募要領確認",
+      "rate": "—",
+      "deadline": "2026-06-15",
+      "deadline_label": "2026年5月12日〜6月15日（締切済み）",
+      "status": "締切済み",
+      "url": "https://sbir.csti-startup-policy.go.jp/koubo",
+      "note": "スタートアップ向け。令和8年度分は締切済み。次年度の同時期再公募を継続フォロー"
+    },
+    {
+      "id": "ytec-jst-2026",
+      "name": "日ASEAN科学技術・イノベーション協働連携事業 若手人材交流プログラム（Y-tec）2026年度",
+      "organization": "JST",
+      "category": "大学・研究機関連携",
+      "amount": "—（招へい・派遣旅費等を支援）",
+      "rate": "—",
+      "deadline": "2026-07-31",
+      "deadline_label": "2026年6月1日〜7月31日12時",
+      "status": "公募中",
+      "url": "https://www.jst.go.jp/aspire/nexus/y-tec/opencall.html",
+      "note": "40歳以下の大学生・大学院生・ポストドクター・教員・科学技術関連業務従事者等が対象。日ASEAN間の若手研究者交流（招へい・派遣、最長1年）。TENJOの大学連携・研究者紹介の参照情報"
+    },
+    {
+      "id": "kansai-energy-recycle-2026",
+      "name": "2026年度助成事業（研究助成・国際交流活動助成・出版助成・研究発表会開催助成）",
+      "organization": "関西エネルギー・リサイクル科学研究振興財団",
+      "category": "大学・研究機関連携",
+      "amount": "助成区分により異なる（要公募要領確認）",
+      "rate": "—",
+      "deadline": "2026-08-31",
+      "deadline_label": "研究助成等：7月31日／研究助成：8月31日",
+      "status": "公募中",
+      "url": "https://www.krf.or.jp/",
+      "note": "関西地域（北陸3県含む）の大学・高専等に勤務する研究者・博士後期課程学生が対象。エネルギー・リサイクル分野、総合防災科学分野の研究助成・国際交流助成。TENJOの大学連携の参照情報"
     }
   ]
 }
