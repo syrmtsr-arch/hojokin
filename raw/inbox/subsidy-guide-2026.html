@@ -132,39 +132,6 @@
   .toc-title { font-size: 14px; font-weight: bold; color: var(--navy); }
 
   /* ======================================================
-     Slide 3: Urgent
-  ====================================================== */
-  #s3 { background: #FEF2F2; }
-  #s3 .slide-header { background: var(--red); }
-  .urgent-note { color: var(--red); font-size: 12px; margin-bottom: 14px; }
-  .urgent-list { display: flex; flex-direction: column; gap: 8px; }
-  .urgent-row {
-    background: var(--white);
-    border-left: 6px solid var(--red);
-    border-radius: 4px;
-    padding: 10px 14px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 1px 4px rgba(0,0,0,.08);
-    flex-wrap: wrap;
-  }
-  .urgent-name { flex: 1; min-width: 200px; font-weight: bold; font-size: 12px; color: var(--navy); }
-  .badge-amt {
-    background: var(--red); color: var(--white);
-    font-size: 11px; font-weight: bold;
-    padding: 4px 10px; border-radius: 3px;
-    white-space: nowrap;
-  }
-  .badge-rate {
-    background: var(--teal); color: var(--white);
-    font-size: 10px; font-weight: bold;
-    padding: 4px 9px; border-radius: 3px;
-    white-space: nowrap;
-  }
-  .urgent-note-text { font-size: 10px; color: var(--gray); min-width: 160px; }
-
-  /* ======================================================
      Slide 4: Scale list
   ====================================================== */
   .scale-table { width: 100%; border-collapse: collapse; }
@@ -185,6 +152,16 @@
   }
   .scale-note { font-size: 9px; color: var(--gray); }
   .footnote { font-size: 9px; color: var(--red); text-align: right; margin-top: 6px; }
+
+  /* ── Link styling for linked program names ── */
+  .prog-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 1px;
+  }
+  .prog-link:hover { opacity: .8; }
+  .list-note { font-size: 0.85em; font-weight: normal; opacity: .75; }
 
   /* ======================================================
      Slide 5: Stage
@@ -398,15 +375,14 @@
 <nav class="toc-nav">
   <a href="#s1">① タイトル</a>
   <a href="#s2">② 目次</a>
-  <a href="#s3">③ 6/12締切</a>
-  <a href="#s4">④ 規模別一覧</a>
-  <a href="#s5">⑤ ステージ別</a>
-  <a href="#s6">⑥ 相談窓口</a>
-  <a href="#s7">⑦ 市町村別</a>
-  <a href="#s8">⑧ カレンダー</a>
-  <a href="#s9">⑨ 国の補助金</a>
-  <a href="#s10">⑩ まとめ</a>
-  <a href="#s11">⑪ 内部メモ：SBIR・大学連携</a>
+  <a href="#s4">③ 規模別一覧</a>
+  <a href="#s5">④ ステージ別</a>
+  <a href="#s6">⑤ 相談窓口</a>
+  <a href="#s7">⑥ 市町村別</a>
+  <a href="#s8">⑦ カレンダー</a>
+  <a href="#s9">⑧ 国の補助金</a>
+  <a href="#s10">⑨ まとめ</a>
+  <a href="#s11">⑩ 内部メモ：SBIR・大学連携</a>
 </nav>
 
 <!-- ============================================================
@@ -423,7 +399,7 @@
       </span>
     </div>
   </div>
-  <p class="date-line">更新：<span id="last-updated-date">2026年6月15日</span></p>
+  <p class="date-line">更新：<span id="last-updated-date">2026年6月23日</span></p>
   <p class="update-line">
     <a class="update-btn" href="https://claude.ai/code" target="_blank" rel="noopener"
        title="claude.ai の「補助金情報 自動更新」ルーティンを開きます。手動で今すぐ実行することも、毎月1日の自動更新を待つこともできます。">
@@ -458,99 +434,29 @@
   <div class="slide-header"><h2>本日の目次</h2></div>
   <div class="slide-body">
     <div class="toc-grid">
-      <div class="toc-card" style="border-color:var(--red)">
-        <span class="toc-num" style="color:var(--red)">01</span>
-        <span class="toc-title">⚠️ 本日6月15日締切の制度／6月12日締切済み一覧</span>
-      </div>
       <div class="toc-card" style="border-color:var(--teal)">
-        <span class="toc-num" style="color:var(--teal)">02</span>
+        <span class="toc-num" style="color:var(--teal)">01</span>
         <span class="toc-title">補助金・助成金 規模別一覧</span>
       </div>
       <div class="toc-card" style="border-color:var(--navy)">
-        <span class="toc-num" style="color:var(--navy)">03</span>
+        <span class="toc-num" style="color:var(--navy)">02</span>
         <span class="toc-title">創業ステージ別おすすめ制度</span>
       </div>
       <div class="toc-card" style="border-color:var(--green)">
-        <span class="toc-num" style="color:var(--green)">04</span>
+        <span class="toc-num" style="color:var(--green)">03</span>
         <span class="toc-title">無料で使える相談窓口・施設</span>
       </div>
       <div class="toc-card" style="border-color:var(--teal)">
-        <span class="toc-num" style="color:var(--teal)">05</span>
+        <span class="toc-num" style="color:var(--teal)">04</span>
         <span class="toc-title">市町村別 主要補助金マップ</span>
       </div>
       <div class="toc-card" style="border-color:var(--gold)">
-        <span class="toc-num" style="color:var(--gold)">06</span>
+        <span class="toc-num" style="color:var(--gold)">05</span>
         <span class="toc-title">年間カレンダー</span>
       </div>
       <div class="toc-card" style="border-color:var(--navy)">
-        <span class="toc-num" style="color:var(--navy)">07</span>
+        <span class="toc-num" style="color:var(--navy)">06</span>
         <span class="toc-title">【内部メモ】SBIR等・大学連携情報</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ============================================================
-     Slide 3: Urgent (6/12)
-============================================================ -->
-<div class="slide" id="s3">
-  <div class="slide-header" style="background:var(--red)">
-    <h2>⚠️ 本日6月15日（月）17時 締切！</h2>
-  </div>
-  <div class="slide-body" style="background:#FEF2F2">
-    <p class="urgent-note">以下の制度は本日2026年6月15日が締切です。対象の方は今すぐ申請してください。</p>
-    <div class="urgent-list">
-      <div class="urgent-row">
-        <span class="urgent-name">起業支援金（いしかわ移住支援事業・令和8年度）</span>
-        <span class="badge-amt">最大200万円</span>
-        <span class="badge-rate">補助率1/2</span>
-        <span class="urgent-note-text">東京圏（埼玉・千葉・東京・神奈川）からの移住・起業者向け。移住支援金と合わせ最大300万円</span>
-      </div>
-    </div>
-
-    <p class="urgent-note" style="margin-top:20px; color:#94A3B8">✅ 以下は2026年6月12日に締切が経過しました（次回公募は未発表）。</p>
-    <div class="urgent-list" style="opacity:.6">
-      <div class="urgent-row">
-        <span class="urgent-name">成長戦略ファンド DX/GX研究開発</span>
-        <span class="badge-amt">最大3,000万円</span>
-        <span class="badge-rate">補助率2/3</span>
-        <span class="urgent-note-text">✅ 締切済み・2者以上連携体・県内企業が代表</span>
-      </div>
-      <div class="urgent-row">
-        <span class="urgent-name">のとスタ補助金</span>
-        <span class="badge-amt">最大3,000万円</span>
-        <span class="badge-rate">補助率3/4</span>
-        <span class="urgent-note-text">✅ 締切済み・能登での実証事業（3年で計9,000万円）</span>
-      </div>
-      <div class="urgent-row">
-        <span class="urgent-name">スタートアップ創出 アクセラレーション枠</span>
-        <span class="badge-amt">最大500万円</span>
-        <span class="badge-rate">補助率3/4</span>
-        <span class="urgent-note-text">✅ 締切済み・起業後10年以内・県内登記</span>
-      </div>
-      <div class="urgent-row">
-        <span class="urgent-name">成長戦略ファンド 国プロFS</span>
-        <span class="badge-amt">最大500万円</span>
-        <span class="badge-rate">全額補助</span>
-        <span class="urgent-note-text">✅ 締切済み・国の競争的資金獲得を目指す企業</span>
-      </div>
-      <div class="urgent-row">
-        <span class="urgent-name">新商品・新サービス開発支援助成金</span>
-        <span class="badge-amt">最大300万円</span>
-        <span class="badge-rate">補助率2/3</span>
-        <span class="urgent-note-text">✅ 締切済み・地域資源活用・社会課題解決</span>
-      </div>
-      <div class="urgent-row">
-        <span class="urgent-name">成長戦略ファンド FS（事業化可能性調査）</span>
-        <span class="badge-amt">最大200万円</span>
-        <span class="badge-rate">全額補助</span>
-        <span class="urgent-note-text">✅ 締切済み・単独企業も可・事業化可能性調査</span>
-      </div>
-      <div class="urgent-row">
-        <span class="urgent-name">スタートアップ創出支援 F/S枠</span>
-        <span class="badge-amt">最大100万円</span>
-        <span class="badge-rate">全額補助</span>
-        <span class="urgent-note-text">✅ 締切済み・起業5年以内または起業予定者（採択5件程度）</span>
       </div>
     </div>
   </div>
@@ -572,37 +478,37 @@
       <tbody>
         <tr>
           <td><span class="tier-badge" style="background:#7C3AED">3億円</span></td>
-          <td style="font-weight:bold">Go-Tech事業（大型研究開発枠）</td>
+          <td style="font-weight:bold"><a class="prog-link" href="https://www.isico.or.jp/site/shinseihin/go-tech-isico.html" target="_blank" rel="noopener">Go-Tech事業（大型研究開発枠）</a></td>
           <td><span class="body-tag">中小機構</span></td>
           <td class="scale-note">大学連携・3年間支援。次回は2027年2月頃公募</td>
         </tr>
         <tr>
           <td><span class="tier-badge" style="background:var(--red)">3,000万円</span></td>
-          <td style="font-weight:bold">成長戦略ファンド DX/GX研究開発</td>
+          <td style="font-weight:bold"><a class="prog-link" href="https://www.isico.or.jp/site/shinseihin/dxgx-rd-r8.html" target="_blank" rel="noopener">成長戦略ファンド DX/GX研究開発</a></td>
           <td><span class="body-tag">ISICO</span></td>
           <td class="scale-note" style="color:#94A3B8">✅6/12締切済　2者以上の連携体</td>
         </tr>
         <tr>
           <td><span class="tier-badge" style="background:var(--red)">3,000万円</span></td>
-          <td style="font-weight:bold">のとスタ補助金（年1,000万×3年）</td>
+          <td style="font-weight:bold"><a class="prog-link" href="https://notosta.info/" target="_blank" rel="noopener">のとスタ補助金（年1,000万×3年）</a></td>
           <td><span class="body-tag">石川県</span></td>
           <td class="scale-note" style="color:#94A3B8">✅6/12締切済　能登での実証事業</td>
         </tr>
         <tr>
           <td><span class="tier-badge" style="background:#7C3AED">1億円/年</span></td>
-          <td style="font-weight:bold">Go-Tech事業（通常枠）</td>
+          <td style="font-weight:bold"><a class="prog-link" href="https://www.isico.or.jp/site/shinseihin/go-tech-isico.html" target="_blank" rel="noopener">Go-Tech事業（通常枠）</a></td>
           <td><span class="body-tag">中小機構</span></td>
           <td class="scale-note">大学連携・3年合計9,750万。次回2027年2月頃</td>
         </tr>
         <tr>
           <td><span class="tier-badge" style="background:var(--red)">500万円</span></td>
-          <td style="font-weight:bold">スタートアップ創出 アクセラ枠</td>
+          <td style="font-weight:bold"><a class="prog-link" href="https://www.isico.or.jp/site/sogyo/startup-hojokin.html" target="_blank" rel="noopener">スタートアップ創出 アクセラ枠</a></td>
           <td><span class="body-tag">ISICO</span></td>
           <td class="scale-note" style="color:#94A3B8">✅6/12締切済　起業後10年以内</td>
         </tr>
         <tr>
           <td><span class="tier-badge" style="background:var(--red)">500万円</span></td>
-          <td style="font-weight:bold">国プロFS</td>
+          <td style="font-weight:bold"><a class="prog-link" href="https://www.isico.or.jp/site/shinseihin/nationalprofs-r8.html" target="_blank" rel="noopener">国プロFS</a></td>
           <td><span class="body-tag">ISICO</span></td>
           <td class="scale-note" style="color:#94A3B8">✅6/12締切済　全額補助</td>
         </tr>
@@ -614,7 +520,7 @@
         </tr>
         <tr>
           <td><span class="tier-badge" style="background:var(--red)">300万円</span></td>
-          <td style="font-weight:bold">新商品・新サービス開発支援助成金</td>
+          <td style="font-weight:bold"><a class="prog-link" href="https://www.isico.or.jp/site/shinseihin/challengefund.html" target="_blank" rel="noopener">新商品・新サービス開発支援助成金</a></td>
           <td><span class="body-tag">ISICO</span></td>
           <td class="scale-note" style="color:#94A3B8">✅6/12締切済　地域資源活用・社会課題解決</td>
         </tr>
@@ -637,31 +543,31 @@
       <div class="stage-card">
         <div class="stage-header" style="background:var(--teal)">💡 創業前</div>
         <div class="stage-items" style="color:var(--teal)">
-          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">スタートアップ創出支援 F/S枠（最大100万・全額補助）</span></div>
-          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">ISICO 創業サポートデスク（無料相談）</span></div>
-          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">金沢市 起業・経営サポートカウンター（無料）</span></div>
-          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">いしかわ創業なび（総合ポータル）</span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)"><a class="prog-link" href="https://www.isico.or.jp/site/sogyo/startup-hojokin.html" target="_blank" rel="noopener">スタートアップ創出支援 F/S枠（最大100万・全額補助）</a></span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)"><a class="prog-link" href="https://www.isico.or.jp/support/" target="_blank" rel="noopener" title="ISICO支援制度一覧（個別ページではなく一覧）">ISICO 創業サポートデスク（無料相談）</a></span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)"><a class="prog-link" href="https://www4.city.kanazawa.lg.jp/hojokin_joseikin/index.html" target="_blank" rel="noopener" title="金沢市 補助金・助成金一覧（個別ページではなく一覧）">金沢市 起業・経営サポートカウンター（無料）</a></span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)"><a class="prog-link" href="https://ishikawa-startup.jp/support-isico/?active-tab=tab-2" target="_blank" rel="noopener">いしかわ創業なび（総合ポータル）</a></span></div>
           <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">各市町村 創業塾（無料〜5,000円）</span></div>
         </div>
       </div>
       <div class="stage-card">
         <div class="stage-header" style="background:var(--navy)">🚀 創業直後（5年以内）</div>
         <div class="stage-items" style="color:var(--navy)">
-          <div class="stage-item"><span class="arrow">▸</span><span>新商品・新サービス開発支援助成金（最大300万）</span></div>
-          <div class="stage-item"><span class="arrow">▸</span><span>スタートアップ創出支援 アクセラ枠（最大500万）</span></div>
-          <div class="stage-item"><span class="arrow">▸</span><span>地域連携若者起業家支援（最大200万・40歳未満）</span></div>
-          <div class="stage-item"><span class="arrow">▸</span><span>ISICO 専門家派遣事業（年3回・無料）</span></div>
-          <div class="stage-item"><span class="arrow">▸</span><span>起業支援金 移住支援（最大200万・東京圏からの移住者のみ／R8は本日6/15締切）</span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span><a class="prog-link" href="https://www.isico.or.jp/site/shinseihin/challengefund.html" target="_blank" rel="noopener">新商品・新サービス開発支援助成金（最大300万）</a></span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span><a class="prog-link" href="https://www.isico.or.jp/site/sogyo/startup-hojokin.html" target="_blank" rel="noopener">スタートアップ創出支援 アクセラ枠（最大500万）</a></span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span><a class="prog-link" href="https://www4.city.kanazawa.lg.jp/hojokin_joseikin/index.html" target="_blank" rel="noopener" title="金沢市 補助金・助成金一覧（個別ページではなく一覧）">地域連携若者起業家支援（最大200万・40歳未満）</a></span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span><a class="prog-link" href="https://www.isico.or.jp/support/" target="_blank" rel="noopener" title="ISICO支援制度一覧（個別ページではなく一覧）">ISICO 専門家派遣事業（年3回・無料）</a></span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span><a class="prog-link" href="https://www.isico.or.jp/support/dgnet/d41179008.html" target="_blank" rel="noopener">起業支援金 移住支援（最大200万・東京圏からの移住者のみ／R8は6/15締切済み・次回R9は例年4〜5月頃）</a></span></div>
         </div>
       </div>
       <div class="stage-card">
         <div class="stage-header" style="background:#7C3AED">📈 成長期（10年以内）</div>
         <div class="stage-items" style="color:#7C3AED">
-          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">成長戦略ファンド DX/GX研究開発（最大3,000万）</span></div>
-          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">いしかわアクセラレータープログラム（伴走支援）</span></div>
-          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">Go-Tech事業（最大3億・大学連携必須）</span></div>
-          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">海外販路開拓支援（最大100万）</span></div>
-          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)">TeSH GAPファンド（大学・高専発スタートアップ向け）</span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)"><a class="prog-link" href="https://www.isico.or.jp/site/shinseihin/dxgx-rd-r8.html" target="_blank" rel="noopener">成長戦略ファンド DX/GX研究開発（最大3,000万）</a></span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)"><a class="prog-link" href="https://www.isico.or.jp/site/sogyo/ishikawa-acceleratorprogram2025.html" target="_blank" rel="noopener">いしかわアクセラレータープログラム（伴走支援）</a></span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)"><a class="prog-link" href="https://www.isico.or.jp/site/shinseihin/go-tech-isico.html" target="_blank" rel="noopener">Go-Tech事業（最大3億・大学連携必須）</a></span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)"><a class="prog-link" href="https://www4.city.kanazawa.lg.jp/hojokin_joseikin/index.html" target="_blank" rel="noopener" title="金沢市 補助金・助成金一覧（個別ページではなく一覧）">海外販路開拓支援（最大100万）</a></span></div>
+          <div class="stage-item"><span class="arrow">▸</span><span style="color:var(--navy)"><a class="prog-link" href="https://tech-startup-hokuriku.jp/" target="_blank" rel="noopener">TeSH GAPファンド（大学・高専発スタートアップ向け）</a></span></div>
         </div>
       </div>
     </div>
@@ -681,23 +587,23 @@
       <div class="consult-section">
         <h3 style="color:var(--green)">📞 相談窓口</h3>
         <div class="consult-row">
-          <div class="consult-name">ISICO 創業サポートデスク</div>
+          <div class="consult-name"><a class="prog-link" href="https://www.isico.or.jp/support/" target="_blank" rel="noopener" title="ISICO支援制度一覧（個別ページではなく一覧）">ISICO 創業サポートデスク</a></div>
           <div class="consult-detail">076-267-1244　創業全般・段階問わず</div>
         </div>
         <div class="consult-row">
-          <div class="consult-name">ISICO 専門家派遣事業</div>
+          <div class="consult-name"><a class="prog-link" href="https://www.isico.or.jp/support/" target="_blank" rel="noopener" title="ISICO支援制度一覧（個別ページではなく一覧）">ISICO 専門家派遣事業</a></div>
           <div class="consult-detail">076-267-1244　年3回無料・診断士等派遣</div>
         </div>
         <div class="consult-row">
-          <div class="consult-name">石川県よろず支援拠点</div>
+          <div class="consult-name"><a class="prog-link" href="https://www.isico.or.jp/support/" target="_blank" rel="noopener" title="ISICO支援制度一覧（個別ページではなく一覧）">石川県よろず支援拠点</a></div>
           <div class="consult-detail">076-267-6711　何度でも無料・経営全般</div>
         </div>
         <div class="consult-row">
-          <div class="consult-name">金沢市 起業・経営サポートカウンター</div>
+          <div class="consult-name"><a class="prog-link" href="https://www4.city.kanazawa.lg.jp/hojokin_joseikin/index.html" target="_blank" rel="noopener" title="金沢市 補助金・助成金一覧（個別ページではなく一覧）">金沢市 起業・経営サポートカウンター</a></div>
           <div class="consult-detail">076-220-2204　月・金曜、中小企業診断士対応</div>
         </div>
         <div class="consult-row">
-          <div class="consult-name">金沢市 起業実践アドバイザー</div>
+          <div class="consult-name"><a class="prog-link" href="https://www4.city.kanazawa.lg.jp/hojokin_joseikin/index.html" target="_blank" rel="noopener" title="金沢市 補助金・助成金一覧（個別ページではなく一覧）">金沢市 起業実践アドバイザー</a></div>
           <div class="consult-detail">076-220-2204　年4回・起業5年以内</div>
         </div>
         <div class="consult-row">
@@ -708,7 +614,7 @@
       <div class="consult-section">
         <h3 style="color:var(--teal)">🏢 施設・ラボ</h3>
         <div class="consult-row facility-row">
-          <div class="consult-name">いしかわクリエイトラボ</div>
+          <div class="consult-name"><a class="prog-link" href="https://www.isico.or.jp/isp/crelabo" target="_blank" rel="noopener">いしかわクリエイトラボ</a></div>
           <div class="consult-detail">月12,000円〜（5㎡）　能美市・5㎡のみ空きあり</div>
         </div>
         <div class="consult-row facility-row">
@@ -728,7 +634,7 @@
           <div class="consult-detail">要問合せ　レンタルオフィス6室</div>
         </div>
         <div class="consult-row facility-row">
-          <div class="consult-name">加賀市イノベーションセンター</div>
+          <div class="consult-name"><a class="prog-link" href="https://www.city.kaga.ishikawa.jp/senryaku_tokku/innovation_center/index.html" target="_blank" rel="noopener">加賀市イノベーションセンター</a></div>
           <div class="consult-detail">基本無料（共益費実費）　0761-72-7833・テック向け</div>
         </div>
       </div>
@@ -749,10 +655,10 @@
       <div class="muni-card">
         <div class="muni-label" style="background:var(--navy)">金沢市</div>
         <div class="muni-items">
-          <div class="muni-item">地域連携若者起業家支援：最大200万円（40歳未満）</div>
-          <div class="muni-item">金沢AIビレッジ形成促進：最大700万円（ICT・クリエイター）</div>
-          <div class="muni-item">金澤町家再生活用：最大550万円</div>
-          <div class="muni-item">工芸品国際販路開拓：最大100万円</div>
+          <div class="muni-item"><a class="prog-link" href="https://www4.city.kanazawa.lg.jp/hojokin_joseikin/index.html" target="_blank" rel="noopener" title="金沢市 補助金・助成金一覧（個別ページではなく一覧）">地域連携若者起業家支援：最大200万円（40歳未満）</a></div>
+          <div class="muni-item"><a class="prog-link" href="https://www4.city.kanazawa.lg.jp/hojokin_joseikin/index.html" target="_blank" rel="noopener" title="金沢市 補助金・助成金一覧（個別ページではなく一覧）">金沢AIビレッジ形成促進：最大700万円（ICT・クリエイター）</a></div>
+          <div class="muni-item"><a class="prog-link" href="https://www4.city.kanazawa.lg.jp/hojokin_joseikin/index.html" target="_blank" rel="noopener" title="金沢市 補助金・助成金一覧（個別ページではなく一覧）">金澤町家再生活用：最大550万円</a></div>
+          <div class="muni-item"><a class="prog-link" href="https://www4.city.kanazawa.lg.jp/hojokin_joseikin/index.html" target="_blank" rel="noopener" title="金沢市 補助金・助成金一覧（個別ページではなく一覧）">工芸品国際販路開拓：最大100万円</a></div>
         </div>
       </div>
       <div class="muni-card">
@@ -768,7 +674,7 @@
         <div class="muni-items">
           <div class="muni-item">新規出店コンペティション：最大500万円</div>
           <div class="muni-item">新規出店支援：最大200万円（空き家活用）</div>
-          <div class="muni-item">イノベーションセンター：賃料無料</div>
+          <div class="muni-item"><a class="prog-link" href="https://www.city.kaga.ishikawa.jp/senryaku_tokku/innovation_center/index.html" target="_blank" rel="noopener">イノベーションセンター：賃料無料</a></div>
         </div>
       </div>
       <div class="muni-card">
@@ -859,71 +765,66 @@
 
           <!-- 地域連携若者起業家支援（上期）: Apr(0)-May(1), before=0, colspan=2, after=10 -->
           <tr>
-            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">金沢市</span>地域連携若者起業家支援（上期）</td>
+            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">金沢市</span><a class="prog-link" href="https://www4.city.kanazawa.lg.jp/hojokin_joseikin/index.html" target="_blank" rel="noopener" title="金沢市 補助金・助成金一覧（個別ページではなく一覧）">地域連携若者起業家支援（上期）</a></td>
             <td class="bar" colspan="2"><div class="gantt-bar done">最大200万円　✅ 5/29締切済</div></td>
             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
           </tr>
 
           <!-- いしかわアクセラレーター R7: Apr(0)-Aug(4), before=0, colspan=5, after=7 -->
           <tr>
-            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">ISICO</span>いしかわアクセラレーター R7</td>
+            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">ISICO</span><a class="prog-link" href="https://www.isico.or.jp/site/sogyo/ishikawa-acceleratorprogram2025.html" target="_blank" rel="noopener">いしかわアクセラレーター R7</a></td>
             <td class="bar" colspan="5"><div class="gantt-bar done">伴走支援プログラム　✅ 8/8締切済（令和7年度）</div></td>
             <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
           </tr>
 
           <!-- s=0(Apr), e=2(Jun), after=9 -->
           <tr>
-            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">ISICO</span>成長戦略ファンド DX/GX</td>
+            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">ISICO</span><a class="prog-link" href="https://www.isico.or.jp/site/shinseihin/dxgx-rd-r8.html" target="_blank" rel="noopener">成長戦略ファンド DX/GX</a></td>
             <td class="bar" colspan="3"><div class="gantt-bar done">最大3,000万円 ・ 補助率2/3　✅ 6/12締切済</div></td>
             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
           </tr>
           <tr>
-            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">石川県</span>のとスタ補助金</td>
+            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">石川県</span><a class="prog-link" href="https://notosta.info/" target="_blank" rel="noopener">のとスタ補助金</a></td>
             <td class="bar" colspan="3"><div class="gantt-bar done">最大3,000万円（年1,000万×3年）補助率3/4　✅ 6/12締切済</div></td>
             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
           </tr>
           <tr>
-            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">ISICO</span>スタートアップ創出 アクセラ枠</td>
+            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">ISICO</span><a class="prog-link" href="https://www.isico.or.jp/site/sogyo/startup-hojokin.html" target="_blank" rel="noopener">スタートアップ創出 アクセラ枠</a></td>
             <td class="bar" colspan="3"><div class="gantt-bar done">最大500万円 ・ 補助率3/4　✅ 6/12締切済</div></td>
             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
           </tr>
           <tr>
-            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">ISICO</span>成長戦略ファンド 国プロFS</td>
+            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">ISICO</span><a class="prog-link" href="https://www.isico.or.jp/site/shinseihin/nationalprofs-r8.html" target="_blank" rel="noopener">成長戦略ファンド 国プロFS</a></td>
             <td class="bar" colspan="3"><div class="gantt-bar done">最大500万円 ・ 全額補助　✅ 6/12締切済</div></td>
             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
           </tr>
           <tr>
-            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">ISICO</span>新商品・新サービス開発助成金</td>
+            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">ISICO</span><a class="prog-link" href="https://www.isico.or.jp/site/shinseihin/challengefund.html" target="_blank" rel="noopener">新商品・新サービス開発助成金</a></td>
             <td class="bar" colspan="3"><div class="gantt-bar done">最大300万円 ・ 補助率2/3　✅ 6/12締切済</div></td>
             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
           </tr>
           <tr>
-            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">ISICO</span>成長戦略ファンド FS</td>
+            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">ISICO</span><a class="prog-link" href="https://www.isico.or.jp/site/shinseihin/fs-r8.html" target="_blank" rel="noopener">成長戦略ファンド FS</a></td>
             <td class="bar" colspan="3"><div class="gantt-bar done">最大200万円 ・ 全額補助　✅ 6/12締切済</div></td>
             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
           </tr>
           <tr>
-            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">ISICO</span>スタートアップ創出 F/S枠</td>
+            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">ISICO</span><a class="prog-link" href="https://www.isico.or.jp/site/sogyo/startup-hojokin.html" target="_blank" rel="noopener">スタートアップ創出 F/S枠</a></td>
             <td class="bar" colspan="3"><div class="gantt-bar done">最大100万円 ・ 全額補助　✅ 6/12締切済</div></td>
             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
           </tr>
-
-          <!-- ── Section: 本日締切 ── -->
-          <tr class="section-row"><td colspan="13">🔴 本日6月15日締切</td></tr>
-
-          <!-- 起業支援金 移住支援 R8: s=0(Apr), e=2(Jun), after=9 -->
           <tr>
-            <td class="label-cell"><span class="cat" style="background:#DC2626">ISICO</span>起業支援金（移住支援・R8）</td>
-            <td class="bar" colspan="3"><div class="gantt-bar" style="background:#DC2626">最大200万円 ・ 補助率1/2　◆本日6/15締切</div></td>
+            <td class="label-cell done-row"><span class="cat" style="background:#94A3B8">ISICO</span><a class="prog-link" href="https://www.isico.or.jp/support/dgnet/d41179008.html" target="_blank" rel="noopener">起業支援金（移住支援・R8）</a></td>
+            <td class="bar" colspan="3"><div class="gantt-bar done">最大200万円 ・ 補助率1/2　✅ 6/15締切済</div></td>
             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
           </tr>
 
           <!-- ── Section: 6月その他 ── -->
-          <tr class="section-row"><td colspan="13">6月　その他の締切</td></tr>
+          <tr class="section-row"><td colspan="13">🔴 6月　締切が近い</td></tr>
 
           <!-- s=2(Jun), e=2(Jun), before=2, after=9 -->
           <tr>
-            <td class="label-cell"><span class="cat" style="background:#EA580C">随時</span>自動化設備投資準備補助金</td>
+            <td class="label-cell"><span class="cat" style="background:#EA580C">随時</span><a class="prog-link" href="https://ishikawa-startup.jp/support-isico/?active-tab=tab-2" target="_blank" rel="noopener" title="いしかわ創業なび（個別ページではなく掲載ポータル）">自動化設備投資準備補助金</a></td>
             <td></td><td></td>
             <td class="bar" colspan="1"><div class="gantt-bar" style="background:#EA580C">◆6/26</div></td>
             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
@@ -934,7 +835,7 @@
 
           <!-- 省力化補助金 s=2(Jun), e=3(Jul), before=2, after=8 -->
           <tr>
-            <td class="label-cell"><span class="cat" style="background:var(--green)">国</span>省力化投資補助金 第7回</td>
+            <td class="label-cell"><span class="cat" style="background:var(--green)">国</span><a class="prog-link" href="https://shoryokuka.smrj.go.jp/" target="_blank" rel="noopener">省力化投資補助金 第7回</a></td>
             <td></td><td></td>
             <td class="bar" colspan="2"><div class="gantt-bar" style="background:var(--green)">最大1億円 ／ 要領公開6/5・申請7月上旬〜下旬</div></td>
             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
@@ -942,7 +843,7 @@
 
           <!-- 三谷BC s=3(Jul), e=5(Sep), before=3, after=6 -->
           <tr>
-            <td class="label-cell"><span class="cat" style="background:#D97706">民間</span>三谷ビジネスコンテスト</td>
+            <td class="label-cell"><span class="cat" style="background:#D97706">民間</span><a class="prog-link" href="https://www.mitani.co.jp/mbc/" target="_blank" rel="noopener">三谷ビジネスコンテスト</a></td>
             <td></td><td></td><td></td>
             <td class="bar" colspan="3"><div class="gantt-bar" style="background:#D97706">最優秀賞100万円　例年7〜9月</div></td>
             <td></td><td></td><td></td><td></td><td></td><td></td>
@@ -950,7 +851,7 @@
 
           <!-- アクセラ R8 s=3(Jul), e=4(Aug), before=3, after=7 -->
           <tr>
-            <td class="label-cell"><span class="cat" style="background:var(--teal)">ISICO</span>いしかわアクセラレーター R8</td>
+            <td class="label-cell"><span class="cat" style="background:var(--teal)">ISICO</span><a class="prog-link" href="https://www.isico.or.jp/site/sogyo/ishikawa-acceleratorprogram2025.html" target="_blank" rel="noopener">いしかわアクセラレーター R8</a></td>
             <td></td><td></td><td></td>
             <td class="bar" colspan="2"><div class="gantt-bar" style="background:var(--teal)">伴走支援プログラム　例年7〜8月</div></td>
             <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
@@ -966,7 +867,7 @@
 
           <!-- テックプランター s=4(Aug), e=6(Oct), before=4, after=5 -->
           <tr>
-            <td class="label-cell"><span class="cat" style="background:var(--teal)">民間</span>石川テックプランター</td>
+            <td class="label-cell"><span class="cat" style="background:var(--teal)">民間</span><a class="prog-link" href="https://techplanter.com/ishikawa/" target="_blank" rel="noopener">石川テックプランター</a></td>
             <td></td><td></td><td></td><td></td>
             <td class="bar" colspan="3"><div class="gantt-bar" style="background:#0F6674">◆10/2締切（確定）</div></td>
             <td></td><td></td><td></td><td></td><td></td>
@@ -977,7 +878,7 @@
 
           <!-- 地域連携（下期）s=6(Oct), e=6(Oct), before=6, after=5 -->
           <tr>
-            <td class="label-cell"><span class="cat" style="background:var(--navy)">金沢市</span>地域連携若者起業家支援（下期）</td>
+            <td class="label-cell"><span class="cat" style="background:var(--navy)">金沢市</span><a class="prog-link" href="https://www4.city.kanazawa.lg.jp/hojokin_joseikin/index.html" target="_blank" rel="noopener" title="金沢市 補助金・助成金一覧（個別ページではなく一覧）">地域連携若者起業家支援（下期）</a></td>
             <td></td><td></td><td></td><td></td><td></td><td></td>
             <td class="bar" colspan="1"><div class="gantt-bar" style="background:var(--navy)">最大200万円　10月公募予定</div></td>
             <td></td><td></td><td></td><td></td><td></td>
@@ -988,11 +889,11 @@
 
           <!-- 随時 s=0, e=11, colspan=12 -->
           <tr>
-            <td class="label-cell"><span class="cat" style="background:var(--teal)">随時</span>金沢AIビレッジ・各種随時制度</td>
+            <td class="label-cell"><span class="cat" style="background:var(--teal)">随時</span><a class="prog-link" href="https://www4.city.kanazawa.lg.jp/hojokin_joseikin/index.html" target="_blank" rel="noopener" title="金沢市 補助金・助成金一覧（個別ページではなく一覧）">金沢AIビレッジ・各種随時制度</a></td>
             <td class="bar" colspan="12"><div class="gantt-bar" style="background:#0D7C8C;opacity:.75">金沢AIビレッジ700万 / 金澤町家550万 / 海外販路100万 ほか　通年受付</div></td>
           </tr>
           <tr>
-            <td class="label-cell"><span class="cat" style="background:var(--green)">国</span>デジタル化・AI導入補助金</td>
+            <td class="label-cell"><span class="cat" style="background:var(--green)">国</span><a class="prog-link" href="https://it-shien.smrj.go.jp/" target="_blank" rel="noopener">デジタル化・AI導入補助金</a></td>
             <td class="bar" colspan="12"><div class="gantt-bar" style="background:var(--green);opacity:.75">通常枠 / インボイス枠 / セキュリティ枠 / 複数者連携枠　2026年3月30日〜随時</div></td>
           </tr>
 
@@ -1001,7 +902,7 @@
 
           <!-- Go-Tech s=10(Feb), e=11(Mar), before=10, after=0 -->
           <tr>
-            <td class="label-cell"><span class="cat" style="background:#7C3AED">中小機構</span>Go-Tech事業</td>
+            <td class="label-cell"><span class="cat" style="background:#7C3AED">中小機構</span><a class="prog-link" href="https://www.isico.or.jp/site/shinseihin/go-tech-isico.html" target="_blank" rel="noopener">Go-Tech事業</a></td>
             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
             <td class="bar" colspan="2"><div class="gantt-bar" style="background:#7C3AED">最大3億円　例年2月公募開始</div></td>
           </tr>
@@ -1011,7 +912,7 @@
     </div><!-- /.gantt-wrap -->
 
     <div class="cal-legend">
-      <div class="cal-legend-item"><span class="cal-legend-dot" style="background:#DC2626"></span>締切直前・緊急（本日6月15日）</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot" style="background:#DC2626"></span>締切直前・緊急</div>
       <div class="cal-legend-item"><span class="cal-legend-dot" style="background:#94A3B8"></span>締切済み</div>
       <div class="cal-legend-item"><span class="cal-legend-dot" style="background:#EA580C"></span>6月その他</div>
       <div class="cal-legend-item"><span class="cal-legend-dot" style="background:var(--green)"></span>国の補助金（公募中）</div>
@@ -1035,18 +936,18 @@
     <div class="national-grid-top">
       <div class="nat-card" style="border-color:var(--green)">
         <div class="nat-card-head">
-          <div class="nat-name">中小企業省力化投資補助金</div>
+          <div class="nat-name"><a class="prog-link" href="https://shoryokuka.smrj.go.jp/" target="_blank" rel="noopener">中小企業省力化投資補助金</a></div>
           <span class="status-badge" style="background:var(--green)">公募中</span>
         </div>
         <div class="nat-deadline" style="color:var(--green)">第7回：6月5日〜7月下旬</div>
         <div class="nat-item">一般型：最大 1億円（設備導入・システム構築等）</div>
         <div class="nat-item">カタログ注文型：最大 1,500万円（汎用製品から選択）</div>
         <div class="nat-item">対象：人手不足に悩む中小企業等</div>
-        <div class="nat-item">URL：shoryokuka.smrj.go.jp</div>
+        <div class="nat-item">URL：<a class="prog-link" href="https://shoryokuka.smrj.go.jp/" target="_blank" rel="noopener">shoryokuka.smrj.go.jp</a></div>
       </div>
       <div class="nat-card" style="border-color:var(--teal)">
         <div class="nat-card-head">
-          <div class="nat-name">ものづくり・商業・サービス生産性向上促進補助金</div>
+          <div class="nat-name"><a class="prog-link" href="https://portal.monodukuri-hojo.jp/" target="_blank" rel="noopener">ものづくり・商業・サービス生産性向上促進補助金</a></div>
           <span class="status-badge" style="background:var(--gray)">次回公募待ち</span>
         </div>
         <div class="nat-deadline" style="color:var(--teal)">23次締切済み・次回未定</div>
@@ -1059,7 +960,7 @@
     <div class="national-grid-bot">
       <div class="nat-card" style="border-color:var(--teal)">
         <div class="nat-card-head">
-          <div class="nat-name">デジタル化・AI導入補助金（旧IT導入補助金）</div>
+          <div class="nat-name"><a class="prog-link" href="https://it-shien.smrj.go.jp/" target="_blank" rel="noopener">デジタル化・AI導入補助金（旧IT導入補助金）</a></div>
           <span class="status-badge" style="background:var(--green)">受付中</span>
         </div>
         <div class="nat-deadline" style="color:var(--teal)">2026年3月30日〜受付中</div>
@@ -1070,7 +971,7 @@
       </div>
       <div class="nat-card" style="border-color:var(--gold)">
         <div class="nat-card-head">
-          <div class="nat-name">小規模事業者持続化補助金（一般型）</div>
+          <div class="nat-name"><a class="prog-link" href="https://s23.jizokukahojokin.info/" target="_blank" rel="noopener">小規模事業者持続化補助金（一般型）</a></div>
           <span class="status-badge" style="background:var(--red)">次回未定</span>
         </div>
         <div class="nat-deadline" style="color:var(--red)">⚠️ 第16回まで終了・次回公募時期未定</div>
@@ -1096,8 +997,8 @@
       <div class="summary-card">
         <span class="summary-emoji">🔴</span>
         <div>
-          <div class="summary-title">本日6月15日締切：起業支援金（移住支援）</div>
-          <div class="summary-body">東京圏からの移住・起業者向け、最大200万円の制度が本日17時締切。なお6月12日締切だったISICO・のとスタ含む7制度はすべて締切済み（次回未発表）。</div>
+          <div class="summary-title">6月26日締切：自動化設備投資準備補助金</div>
+          <div class="summary-body">詳細不明だが「いしかわ創業なび」掲載の制度が6月26日締切。なお6月12日・15日締切だったISICO・のとスタ・起業支援金（移住支援）含む8制度はすべて締切済み（次回未発表）。</div>
         </div>
       </div>
       <div class="summary-card">
@@ -1135,13 +1036,64 @@
     <span class="sub">TENJO支援チーム向け参照情報（起業家への直接案内は対象外）</span>
   </div>
   <div class="slide-body">
-    <p class="nat-footnote" style="margin-top:0">⚠️ 以下はSBIR制度ポータルおよびJST産学官連携メールマガジン等で確認した情報。令和8年度のSBIR系公募はすべて締切済みのため<strong>来年同時期（2027年3〜6月頃）に再公募有無を再確認</strong>すること。大学連携枠は現在公募中のため、共同研究先探索・研究者紹介の機会として活用を検討。</p>
+    <p class="nat-footnote" style="margin-top:0">⚠️ 以下はSBIR制度ポータル・jGrants・NEDO/JST公募情報・JST産学官連携メールマガジン等で確認した情報。令和8年度のSBIR系公募はすべて締切済みのため<strong>来年同時期（2027年3〜6月頃）に再公募有無を再確認</strong>すること。新規追加した研究開発型公募・大学連携枠は現在公募中または予告段階のため、起業家紹介・共同研究先探索の機会として活用を検討。</p>
 
-    <h3 style="margin:16px 0 8px; font-size:14px; color:var(--navy)">国の研究開発型公募（SBIR等・令和8年度はすべて締切済み）</h3>
+    <h3 style="margin:16px 0 8px; font-size:14px; color:var(--navy)">✅ 現在公募中（2026-06-23確認・確度高）</h3>
+    <div class="national-grid-top">
+      <div class="nat-card" style="border-color:var(--green)">
+        <div class="nat-card-head">
+          <div class="nat-name"><a class="prog-link" href="https://www.jst.go.jp/program/startupkikin/sogyo-sp/index.html" target="_blank" rel="noopener">大学発新産業創出基金事業 早暁プログラム第3期／JST</a></div>
+          <span class="status-badge" style="background:var(--green)">公募中</span>
+        </div>
+        <div class="nat-deadline" style="color:var(--green)">2026年4月10日〜7月13日正午</div>
+        <div class="nat-item">対象：大学等の技術シーズで起業を目指す個人（起業前・現職継続可）</div>
+        <div class="nat-item">概要：研究開発費・ドアノック経費等を支援。金沢大学等の地域拠点経由の応募を想定</div>
+        <div class="nat-item">URL：<a class="prog-link" href="https://www.jst.go.jp/program/startupkikin/sogyo-sp/index.html" target="_blank" rel="noopener">jst.go.jp/program/startupkikin/sogyo-sp</a></div>
+      </div>
+    </div>
+
+    <h3 style="margin:20px 0 8px; font-size:14px; color:var(--navy)">⚠️ 予告・見込み段階（2026-06-23確認・要継続フォロー）</h3>
+    <div class="national-grid-top">
+      <div class="nat-card" style="border-color:var(--gold)">
+        <div class="nat-card-head">
+          <div class="nat-name"><a class="prog-link" href="https://growth-100-oku.smrj.go.jp/" target="_blank" rel="noopener">中小企業成長加速化補助金（3次公募）／中小企業庁・中小機構</a></div>
+          <span class="status-badge" style="background:var(--gold)">見込み</span>
+        </div>
+        <div class="nat-deadline" style="color:var(--gold)">3次公募「夏頃」予定（未確定）</div>
+        <div class="nat-item">対象：売上高10〜100億円規模の成長企業（創業直後には不向き）</div>
+        <div class="nat-item">上限5億円・補助率1/2。2次公募は2026年3月26日終了済み</div>
+      </div>
+      <div class="nat-card" style="border-color:var(--gold)">
+        <div class="nat-card-head">
+          <div class="nat-name"><a class="prog-link" href="https://shinjigyou-shinshutsu.smrj.go.jp/" target="_blank" rel="noopener">新事業進出・ものづくり補助金（統合新制度）／中小企業庁</a></div>
+          <span class="status-badge" style="background:var(--gold)">見込み</span>
+        </div>
+        <div class="nat-deadline" style="color:var(--gold)">6月頃公募開始見込み（未確定）</div>
+        <div class="nat-item">既存「ものづくり補助金」との統合・名称変更の可能性。旧制度は6/19終了済み</div>
+      </div>
+      <div class="nat-card" style="border-color:var(--gold)">
+        <div class="nat-card-head">
+          <div class="nat-name"><a class="prog-link" href="https://www.nedo.go.jp/koubo/CA1_100521.html" target="_blank" rel="noopener">NEDO ディープテック・スタートアップ支援基金（DTSU）／GX事業</a></div>
+          <span class="status-badge" style="background:var(--gold)">見込み</span>
+        </div>
+        <div class="nat-deadline" style="color:var(--gold)">2026年6月以降開始予定（予告段階）</div>
+        <div class="nat-item">事業会社連携必須。5〜25億円規模でレイターステージ向け</div>
+      </div>
+      <div class="nat-card" style="border-color:var(--gold)">
+        <div class="nat-card-head">
+          <div class="nat-name"><a class="prog-link" href="https://www.nedo.go.jp/koubo/CA1_100510.html" target="_blank" rel="noopener">NEDO NEP開拓コース（起業・経営人材確保等支援事業）</a></div>
+          <span class="status-badge" style="background:var(--gold)">見込み</span>
+        </div>
+        <div class="nat-deadline" style="color:var(--gold)">例年1〜2月下旬公募（次回時期要再確認）</div>
+        <div class="nat-item">対象：起業前の個人・チーム（ディープテック系アイデア）</div>
+      </div>
+    </div>
+
+    <h3 style="margin:20px 0 8px; font-size:14px; color:var(--navy)">国の研究開発型公募（SBIR等・令和8年度はすべて締切済み）</h3>
     <div class="national-grid-bot">
       <div class="nat-card" style="border-color:var(--gray)">
         <div class="nat-card-head">
-          <div class="nat-name">SBIR推進プログラム（連結型）／NEDO</div>
+          <div class="nat-name"><a class="prog-link" href="https://sbir.csti-startup-policy.go.jp/koubo" target="_blank" rel="noopener" title="SBIR制度ポータル（個別ページではなく公募一覧）">SBIR推進プログラム（連結型）／NEDO</a></div>
           <span class="status-badge" style="background:var(--gray)">締切済み</span>
         </div>
         <div class="nat-deadline" style="color:var(--gray)">2026年3月16日〜4月3日</div>
@@ -1149,7 +1101,7 @@
       </div>
       <div class="nat-card" style="border-color:var(--gray)">
         <div class="nat-card-head">
-          <div class="nat-name">STARTプロジェクト推進型 SBIRフェーズ1／JST</div>
+          <div class="nat-name"><a class="prog-link" href="https://sbir.csti-startup-policy.go.jp/koubo" target="_blank" rel="noopener" title="SBIR制度ポータル（個別ページではなく公募一覧）">STARTプロジェクト推進型 SBIRフェーズ1／JST</a></div>
           <span class="status-badge" style="background:var(--gray)">締切済み</span>
         </div>
         <div class="nat-deadline" style="color:var(--gray)">2026年3月23日〜4月30日</div>
@@ -1157,7 +1109,7 @@
       </div>
       <div class="nat-card" style="border-color:var(--gray)">
         <div class="nat-card-head">
-          <div class="nat-name">交通運輸技術開発推進制度（マッチング推進型）／国土交通省</div>
+          <div class="nat-name"><a class="prog-link" href="https://sbir.csti-startup-policy.go.jp/koubo" target="_blank" rel="noopener" title="SBIR制度ポータル（個別ページではなく公募一覧）">交通運輸技術開発推進制度（マッチング推進型）／国土交通省</a></div>
           <span class="status-badge" style="background:var(--gray)">締切済み</span>
         </div>
         <div class="nat-deadline" style="color:var(--gray)">2026年4月6日〜5月22日</div>
@@ -1165,7 +1117,7 @@
       </div>
       <div class="nat-card" style="border-color:var(--gray)">
         <div class="nat-card-head">
-          <div class="nat-name">安全保障技術研究推進制度（令和8年度）／防衛装備庁</div>
+          <div class="nat-name"><a class="prog-link" href="https://sbir.csti-startup-policy.go.jp/koubo" target="_blank" rel="noopener" title="SBIR制度ポータル（個別ページではなく公募一覧）">安全保障技術研究推進制度（令和8年度）／防衛装備庁</a></div>
           <span class="status-badge" style="background:var(--gray)">締切済み</span>
         </div>
         <div class="nat-deadline" style="color:var(--gray)">2026年3月13日〜5月20日</div>
@@ -1173,7 +1125,7 @@
       </div>
       <div class="nat-card" style="border-color:var(--gray)">
         <div class="nat-card-head">
-          <div class="nat-name">SBIR推進プログラム（一気通貫型・フェーズ2）／NEDO</div>
+          <div class="nat-name"><a class="prog-link" href="https://sbir.csti-startup-policy.go.jp/koubo" target="_blank" rel="noopener" title="SBIR制度ポータル（個別ページではなく公募一覧）">SBIR推進プログラム（一気通貫型・フェーズ2）／NEDO</a></div>
           <span class="status-badge" style="background:var(--gray)">締切済み</span>
         </div>
         <div class="nat-deadline" style="color:var(--gray)">〜2026年6月12日</div>
@@ -1181,7 +1133,7 @@
       </div>
       <div class="nat-card" style="border-color:var(--gray)">
         <div class="nat-card-head">
-          <div class="nat-name">環境スタートアップ研究開発支援事業／環境省</div>
+          <div class="nat-name"><a class="prog-link" href="https://sbir.csti-startup-policy.go.jp/koubo" target="_blank" rel="noopener" title="SBIR制度ポータル（個別ページではなく公募一覧）">環境スタートアップ研究開発支援事業／環境省</a></div>
           <span class="status-badge" style="background:var(--gray)">締切済み</span>
         </div>
         <div class="nat-deadline" style="color:var(--gray)">2026年5月12日〜6月15日</div>
@@ -1193,26 +1145,26 @@
     <div class="national-grid-top">
       <div class="nat-card" style="border-color:var(--teal)">
         <div class="nat-card-head">
-          <div class="nat-name">日ASEAN Y-tec 若手人材交流プログラム2026年度／JST</div>
+          <div class="nat-name"><a class="prog-link" href="https://www.jst.go.jp/aspire/nexus/y-tec/opencall.html" target="_blank" rel="noopener">日ASEAN Y-tec 若手人材交流プログラム2026年度／JST</a></div>
           <span class="status-badge" style="background:var(--green)">公募中</span>
         </div>
         <div class="nat-deadline" style="color:var(--teal)">2026年6月1日〜7月31日12時</div>
         <div class="nat-item">対象：40歳以下の大学生・大学院生・ポストドクター・教員・科学技術関連業務従事者等</div>
         <div class="nat-item">概要：日ASEAN間の若手研究者交流（招へい・派遣、最長1年）</div>
-        <div class="nat-item">URL：jst.go.jp/aspire/nexus/y-tec/opencall.html</div>
+        <div class="nat-item">URL：<a class="prog-link" href="https://www.jst.go.jp/aspire/nexus/y-tec/opencall.html" target="_blank" rel="noopener">jst.go.jp/aspire/nexus/y-tec/opencall.html</a></div>
       </div>
       <div class="nat-card" style="border-color:var(--teal)">
         <div class="nat-card-head">
-          <div class="nat-name">2026年度助成事業／関西エネルギー・リサイクル科学研究振興財団</div>
+          <div class="nat-name"><a class="prog-link" href="https://www.krf.or.jp/" target="_blank" rel="noopener">2026年度助成事業／関西エネルギー・リサイクル科学研究振興財団</a></div>
           <span class="status-badge" style="background:var(--green)">公募中</span>
         </div>
         <div class="nat-deadline" style="color:var(--teal)">研究助成等：7月31日／研究助成：8月31日</div>
         <div class="nat-item">対象：関西地域（北陸3県含む）の大学・高専等に勤務する研究者・博士後期課程学生</div>
         <div class="nat-item">概要：エネルギー・リサイクル分野、総合防災科学分野の研究助成・国際交流助成</div>
-        <div class="nat-item">URL：krf.or.jp</div>
+        <div class="nat-item">URL：<a class="prog-link" href="https://www.krf.or.jp/" target="_blank" rel="noopener">krf.or.jp</a></div>
       </div>
     </div>
-    <p class="nat-footnote">出典：[[subsidy-database-ishikawa-startup-2026]]「【国の研究開発型公募（SBIR等）】」「【大学・研究機関連携・アカデミア向け公募】」</p>
+    <p class="nat-footnote">出典：[[subsidy-database-ishikawa-startup-2026]]「【国の研究開発型公募（SBIR等）】」（✅現在公募中／⚠️予告・見込み段階のセクションを含む）「【大学・研究機関連携・アカデミア向け公募】」</p>
   </div>
 </div>
 

@@ -3,7 +3,7 @@ title: 石川県・北陸スタートアップ支援制度カレンダー（2026
 type: synthesis
 tags: [補助金, カレンダー, 締切, スタートアップ, 創業支援]
 created: 2026-06-04
-updated: 2026-06-15
+updated: 2026-06-23
 sources: [subsidy-database-ishikawa-startup-2026.md]
 ---
 
@@ -11,11 +11,12 @@ sources: [subsidy-database-ishikawa-startup-2026.md]
 
 募集・申請期限が判明している制度を時系列で整理。随時更新。
 
-> **🔴 本日締切（2026年6月15日）**
-> - **起業支援金（いしかわ移住支援事業・令和8年度）**（最大200万円・本日17時必着）※詳細は下記参照
+> **🔴 締切が近い（2026年6月26日）**
+> - **自動化設備投資準備補助金**（詳細不明・いしかわ創業なび掲載）※詳細は下記参照
 >
-> **✅ 締切済み（2026年6月12日）**
-> - のとスタ補助金／新商品・新サービス開発支援事業助成金／成長戦略ファンド（DX/GX・FS・国プロFS）／スタートアップ創出支援事業（F/S・アクセラレーション両枠）→ 7件すべて締切済み。次回公募は未発表
+> **✅ 締切済み（2026年6月12日〜15日）**
+> - のとスタ補助金／新商品・新サービス開発支援事業助成金／成長戦略ファンド（DX/GX・FS・国プロFS）／スタートアップ創出支援事業（F/S・アクセラレーション両枠）→ 7件すべて締切済み（6/12）。次回公募は未発表
+> - 起業支援金（いしかわ移住支援事業・令和8年度）→ 6/15締切済み。次回公募（令和9年度）は例年4〜5月頃開始の傾向
 
 ---
 
@@ -35,17 +36,17 @@ sources: [subsidy-database-ishikawa-startup-2026.md]
 | 成長戦略ファンド 国プロFS | 6月12日 ✅ | 最大500万円・全額補助 | ISICO |
 | スタートアップ創出支援 F/S枠 | 6月12日 ✅ | 最大100万円・全額補助 | ISICO |
 | スタートアップ創出支援 アクセラレーション枠 | 6月12日 ✅ | 最大500万円・補助率3/4 | ISICO |
+| 起業支援金（いしかわ移住支援事業・令和8年度） | 6月15日 ✅ | 最大200万円（補助率1/2以内・移住支援金と合わせ最大300万円） | ISICO |
 
 > いずれも次回（令和9年度）公募は現時点で未発表。
 
 ---
 
-### 🔴 6月（締切が近い・本日締切含む）
+### 🔴 6月（締切が近い）
 
 | 制度名 | 締切 | 金額 | 主体 | 備考 |
 |---|---|---|---|---|
-| **起業支援金（いしかわ移住支援事業・令和8年度）** | **本日6月15日 17時必着** | 最大200万円（補助率1/2以内）※移住支援金と合わせ最大300万円 | ISICO | 東京圏（埼玉・千葉・東京・神奈川）からの移住・起業者向け。2026/4/1〜公募中で本日締切 |
-| 自動化設備投資準備補助金 | 6月26日 | 不明 | — | いしかわ創業なび掲載 |
+| 自動化設備投資準備補助金 | 6月26日 | 不明（前年度実績は上限100万円・補助率2/3） | — | いしかわ創業なび掲載。令和8年度の正式な金額・補助率は要確認 |
 
 ---
 
@@ -74,6 +75,11 @@ sources: [subsidy-database-ishikawa-startup-2026.md]
 | 制度名 | 時期 | 金額 | 備考 |
 |---|---|---|---|
 | 中小企業省力化投資補助金（第7回） | 公募要領公開：6月5日／申請受付：7月上旬／締切：7月下旬／採択発表：11月中旬（すべて予定） | 最大**1億円**（一般型） | 人手不足対策。カタログ型は最大1,500万円。GビズIDプライム必須（取得に時間要） |
+| **JST 大学発新産業創出基金事業 早暁プログラム第3期** | **2026年4月10日〜7月13日正午（公募中）** | 要確認（研究開発費・ドアノック経費等） | 大学等の技術シーズで起業を目指す個人向け（起業前・現職継続可）。金沢大学等の地域拠点経由での応募を想定 |
+| 中小企業成長加速化補助金（3次公募） | 夏頃予定（⚠️未確定・見込み） | 上限5億円・補助率1/2 | 対象は売上高10〜100億円規模の成長企業。創業直後のスタートアップには不向き |
+| 新事業進出・ものづくり補助金（統合新制度） | 6月頃公募開始見込み（⚠️未確定） | 要確認 | 既存「ものづくり補助金」との統合・名称変更の可能性。旧制度（新事業進出補助金第4回）は6/19終了済み |
+| NEDO ディープテック・スタートアップ支援基金（DTSU）／GX事業 | 6月以降開始予定（⚠️予告段階） | 5億〜25億円規模・補助率1/2〜2/3 | 事業会社との連携必須。レイターステージ向けで規模が大きい |
+| NEDO NEP開拓コース（起業・経営人材確保等支援事業） | 例年1〜2月下旬公募（⚠️次回時期要再確認） | 要確認 | 起業前個人・チーム向け。直近公募は締切済みの可能性高い |
 
 ---
 
@@ -132,8 +138,8 @@ sources: [subsidy-database-ishikawa-startup-2026.md]
 
 ## 【融資制度】
 
-| 制度 | 限度額 | 対象 |
-|---|---|---|
+| 制度             | 限度額     | 対象                        |
+| -------------- | ------- | ------------------------- |
 | 金沢市中小企業創業者支援資金 | 2,000万円 | 創業予定または1年未満（若者・女性向け優遇分あり） |
 
 ---
@@ -146,32 +152,32 @@ sources: [subsidy-database-ishikawa-startup-2026.md]
 
 定期巡回で最新情報を確認するURL一覧。
 
-| 制度名 | URL |
-|---|---|
-| いしかわスタートアップ支援ポータル | https://ishikawa-startup.jp/support-isico/?active-tab=tab-2 |
-| スタートアップビジネスプランコンテストいしかわ | https://ishikawa-startup.jp/bijicon/ |
-| いしかわアクセラレータープログラム | https://www.isico.or.jp/site/sogyo/ishikawa-acceleratorprogram2025.html |
-| 新商品・新サービス開発支援事業助成金 | https://www.isico.or.jp/site/shinseihin/challengefund.html |
-| 成長戦略ファンド（DX/GX・FS） | https://www.isico.or.jp/site/shinseihin/innovation.html |
-| 省力化投資補助金 | https://shoryokuka.smrj.go.jp/ |
-| デジタル化・AI導入補助金 | https://it-shien.smrj.go.jp/ |
-| ものづくり補助金 | https://portal.monodukuri-hojo.jp/ |
-| 持続化補助金（一般型） | https://s23.jizokukahojokin.info/ |
-| 成長戦略ファンド DX/GX研究開発（詳細） | https://www.isico.or.jp/site/shinseihin/dxgx-rd-r8.html |
-| 成長戦略ファンド FS（詳細） | https://www.isico.or.jp/site/shinseihin/fs-r8.html |
-| 成長戦略ファンド 国プロFS（詳細） | https://www.isico.or.jp/site/shinseihin/nationalprofs-r8.html |
-| 専門家派遣事業 | https://www.isico.or.jp/site/keiei/specialist.html |
-| 起業支援金（移住支援・R8公募ページ） | https://www.isico.or.jp/support/dgnet/d41179008.html |
-| のとスタ補助金 | https://notosta.info/ |
-| FASTAR（中小機構） | https://fastar.smrj.go.jp/ |
-| 三谷ビジネスコンテスト | https://www.mitani.co.jp/mbc/ |
-| 石川テックプランター | https://techplanter.com/ishikawa/ |
-| M-BIP（JAIST） | https://www.m-bip.jp/ |
-| TeSH GAPファンド | https://tech-startup-hokuriku.jp/ |
-| Ishikawa Innovation Base | https://www.pref.ishikawa.lg.jp/syoko/startup/iib.html |
-| いしかわクリエイトラボ | https://www.isico.or.jp/isp/crelabo |
-| I-O DATA財団 | https://iodatazaidan.wixsite.com/foundation |
-| 金沢市 起業支援一覧 | https://ishikawa-startup.jp/support-isico/?active-tab=tab-3 |
+| 制度名                      | URL                                                                     |
+| ------------------------ | ----------------------------------------------------------------------- |
+| いしかわスタートアップ支援ポータル        | https://ishikawa-startup.jp/support-isico/?active-tab=tab-2             |
+| スタートアップビジネスプランコンテストいしかわ  | https://ishikawa-startup.jp/bijicon/                                    |
+| いしかわアクセラレータープログラム        | https://www.isico.or.jp/site/sogyo/ishikawa-acceleratorprogram2025.html |
+| 新商品・新サービス開発支援事業助成金       | https://www.isico.or.jp/site/shinseihin/challengefund.html              |
+| 成長戦略ファンド（DX/GX・FS）       | https://www.isico.or.jp/site/shinseihin/innovation.html                 |
+| 省力化投資補助金                 | https://shoryokuka.smrj.go.jp/                                          |
+| デジタル化・AI導入補助金            | https://it-shien.smrj.go.jp/                                            |
+| ものづくり補助金                 | https://portal.monodukuri-hojo.jp/                                      |
+| 持続化補助金（一般型）              | https://s23.jizokukahojokin.info/                                       |
+| 成長戦略ファンド DX/GX研究開発（詳細）   | https://www.isico.or.jp/site/shinseihin/dxgx-rd-r8.html                 |
+| 成長戦略ファンド FS（詳細）          | https://www.isico.or.jp/site/shinseihin/fs-r8.html                      |
+| 成長戦略ファンド 国プロFS（詳細）       | https://www.isico.or.jp/site/shinseihin/nationalprofs-r8.html           |
+| 専門家派遣事業                  | https://www.isico.or.jp/site/keiei/specialist.html                      |
+| 起業支援金（移住支援・R8公募ページ）       | https://www.isico.or.jp/support/dgnet/d41179008.html                    |
+| のとスタ補助金                  | https://notosta.info/                                                   |
+| FASTAR（中小機構）             | https://fastar.smrj.go.jp/                                              |
+| 三谷ビジネスコンテスト              | https://www.mitani.co.jp/mbc/                                           |
+| 石川テックプランター               | https://techplanter.com/ishikawa/                                       |
+| M-BIP（JAIST）             | https://www.m-bip.jp/                                                   |
+| TeSH GAPファンド             | https://tech-startup-hokuriku.jp/                                       |
+| Ishikawa Innovation Base | https://www.pref.ishikawa.lg.jp/syoko/startup/iib.html                  |
+| いしかわクリエイトラボ              | https://www.isico.or.jp/isp/crelabo                                     |
+| I-O DATA財団               | https://iodatazaidan.wixsite.com/foundation                             |
+| 金沢市 起業支援一覧               | https://ishikawa-startup.jp/support-isico/?active-tab=tab-3             |
 | ISICO 補助金・公募情報一覧 | https://www.isico.or.jp/support/ |
 | 金沢市 補助金・助成金一覧 | https://www4.city.kanazawa.lg.jp/hojokin_joseikin/index.html |
 | SBIR制度ポータル（内閣府） | https://sbir.go.jp/ |
@@ -180,3 +186,8 @@ sources: [subsidy-database-ishikawa-startup-2026.md]
 | 中小企業庁 予算・公募案内 | https://www.chusho.meti.go.jp/koukai/yosan/index.html |
 | NEDO公募情報 | https://www.nedo.go.jp/koubo/index.html |
 | JST公募情報 | https://www.jst.go.jp/koubo/ |
+| JST 大学発新産業創出基金事業 早暁プログラム | https://www.jst.go.jp/program/startupkikin/sogyo-sp/index.html |
+| 中小企業成長加速化補助金 | https://growth-100-oku.smrj.go.jp/ |
+| 新事業進出・ものづくり補助金（統合新制度） | https://shinjigyou-shinshutsu.smrj.go.jp/ |
+| NEDO ディープテック・スタートアップ支援基金（DTSU）/GX事業 | https://www.nedo.go.jp/koubo/CA1_100521.html |
+| NEDO NEP開拓コース | https://www.nedo.go.jp/koubo/CA1_100510.html |
